@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         data1.child("relay2").setValue("1")
         data1.child("relay1").setValue("1")
+        data1.child("camera").setValue("1")
 
     }
 }
