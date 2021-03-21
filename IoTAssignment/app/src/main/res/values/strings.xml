@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="smart_city_system">Smart City System</string>
+    <string name="smart_parking_button">Smart Parking Button</string>
+    <string name="smart_street_button">Smart Street Button</string>
+    <string name="smart_agriculture_button">Smart Agriculture Button</string>
+    <string name="smart_building_button">Smart Building Button</string>
+    <string name="title_activity_smart_street">SmartStreet</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_smart_parking">SmartParking</string>
+    <string name="backbutton">backButton</string>
+    <string name="smart_street">Smart Street</string>
+    <string name="smart_parking">Smart Parking</string>
+    <string name="smart_agriculture">Smart Agriculture</string>
+    <string name="smart_building">Smart Building</string>
 </resources>

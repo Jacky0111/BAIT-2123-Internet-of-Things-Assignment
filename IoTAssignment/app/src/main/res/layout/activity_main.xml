@@ -1,41 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/group_148"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:text="@string/smart_city_system"
+        android:textColor="#253A4B"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/smartParkingButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/smartParkingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/group_149"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:foreground="?android:selectableItemBackground"
+        android:contentDescription="@string/smart_parking_button"
+        app:layout_constraintBottom_toTopOf="@+id/smartAgriculture"
+        app:layout_constraintEnd_toStartOf="@+id/smartStreetButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/group_149" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/smartStreetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/group_151"
-        tools:layout_editor_absoluteX="225dp"
-        tools:layout_editor_absoluteY="410dp" />
+        android:foreground="?android:selectableItemBackground"
+        android:contentDescription="@string/smart_street_button"
+        app:layout_constraintBottom_toTopOf="@+id/smartBuilding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/smartParkingButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/group_148" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/smartBuilding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/group_152"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="410dp" />
+        android:foreground="?android:selectableItemBackground"
+        android:contentDescription="@string/smart_building_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/smartAgriculture"
+        app:layout_constraintTop_toBottomOf="@+id/smartStreetButton"
+        app:srcCompat="@drawable/group_151" />
+
+    <ImageView
+        android:id="@+id/smartAgriculture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?android:selectableItemBackground"
+        android:contentDescription="@string/smart_agriculture_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/smartBuilding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/smartParkingButton"
+        app:srcCompat="@drawable/group_152" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
