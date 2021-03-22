@@ -17,4 +17,5 @@
     <string name="smart_parking">Smart Parking</string>
     <string name="smart_agriculture">Smart Agriculture</string>
     <string name="smart_building">Smart Building</string>
+    <string name="title_activity_tt">tt</string>
 </resources>
