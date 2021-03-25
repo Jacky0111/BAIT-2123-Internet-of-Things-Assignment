@@ -18,4 +18,5 @@
     <string name="smart_agriculture">Smart Agriculture</string>
     <string name="smart_building">Smart Building</string>
     <string name="title_activity_tt">tt</string>
+    <string name= "image">image</string>
 </resources>
