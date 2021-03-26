@@ -22,7 +22,7 @@
         android:id="@+id/stockIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="88dp"
         android:text="@string/smart_agriculture"
         android:textColor="#253A4B"
@@ -30,5 +30,29 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="267dp"
+        android:layout_height="283dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/temp_button"
+        android:contentDescription="@string/image"/>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="265dp"
+        android:layout_height="283dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        app:srcCompat="@drawable/soil_button"
+        android:contentDescription="@string/image"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
