@@ -19,7 +19,13 @@ class SmartParking : AppCompatActivity() {
 
         val inGroundBtn = findViewById<ImageView>(R.id.in_groundSensor)
         inGroundBtn.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, InGround::class.java)
+            startActivity(intent)
+        }
+
+        val parkingBtn = findViewById<ImageButton>(R.id.parking_sensor)
+        parkingBtn.setOnClickListener{
+            val intent = Intent(this, ParkingSensor::class.java)
             startActivity(intent)
         }
     }

@@ -36,12 +36,25 @@
         android:id="@+id/in_groundSensor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
         android:contentDescription="@string/in_ground_sensor"
         android:foreground="?android:selectableItemBackground"
+        app:layout_constraintBottom_toTopOf="@+id/parking_sensor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockIn"
         app:srcCompat="@drawable/group_152" />
+
+    <ImageButton
+        android:id="@+id/parking_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardview_light_background"
+        android:contentDescription="@string/parking_sensor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/in_groundSensor"
+        app:srcCompat="@drawable/group_156" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

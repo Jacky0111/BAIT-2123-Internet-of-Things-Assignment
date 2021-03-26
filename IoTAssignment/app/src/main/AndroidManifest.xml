@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".SmartAgriculture"></activity>
+        <activity android:name=".SmartArgriculture" />
+        <activity android:name=".ParkingSensor" />
         <activity android:name=".InGround" />
         <activity android:name=".SmartBuilding" />
         <activity android:name=".SmartStreet" />
-        <activity android:name=".SmartAgriculture" />
         <activity android:name=".SmartParking" />
         <activity android:name=".MainActivity">
             <intent-filter>
