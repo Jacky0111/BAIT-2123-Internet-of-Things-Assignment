@@ -67,6 +67,6 @@
         app:layout_constraintEnd_toStartOf="@+id/smartBuilding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/smartParkingButton"
-        app:srcCompat="@drawable/group_152" />
+        app:srcCompat="@drawable/group_153" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
