@@ -7,7 +7,5 @@ class InGround : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_in_ground)
-        
-
     }
 }
