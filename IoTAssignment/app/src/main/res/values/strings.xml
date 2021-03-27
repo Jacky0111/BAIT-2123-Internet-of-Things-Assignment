@@ -22,4 +22,5 @@
     <string name="parking_sensor">Parking Sensor</string>
     <string name="proximity_sensor">Proximity Sensor</string>
     <string name="smart_lighting">Smart Lighting</string>
+    <string name="brightness_4000_lumens">Brightness: 4000 lumens</string>
 </resources>
