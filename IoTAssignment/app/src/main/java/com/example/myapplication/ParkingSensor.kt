@@ -33,17 +33,17 @@ class ParkingSensor : AppCompatActivity() {
 
         var hour = currentDateTime.hour+8
 
-        val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
                 .reference.child("PI_12_$formattedDate")
 
         parkdata=findViewById(R.id.parkingData)
 
-        var lastQuery = database1.child("$hour").orderByKey().limitToLast(1)
+        var lastQuery = fetchDatabaseRef.child("02").orderByKey().limitToLast(1)
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 for (snapshot in snapshot.children ){
-                    var sound = snapshot.child("sound").getValue().toString()
+                    var sound = snapshot.child("rand1").getValue().toString()
                     Log.i("firebase", snapshot.getValue().toString())
 
                     Log.i("sound", sound.toString())

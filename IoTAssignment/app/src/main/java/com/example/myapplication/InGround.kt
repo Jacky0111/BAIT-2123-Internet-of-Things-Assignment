@@ -8,9 +8,16 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class InGround : AppCompatActivity(), SensorEventListener{
 
@@ -18,10 +25,15 @@ class InGround : AppCompatActivity(), SensorEventListener{
     private var proxy : Sensor? = null
     private lateinit var text: TextView
     private lateinit var pb: CircularProgressBar
+    var sound : String? = null
+
+    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+    val data1 = database1.getReference("PI_12_CONTROL")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_in_ground)
+
 
         val backBtn = findViewById<ImageButton>(R.id.backButton)
         backBtn.setOnClickListener{
@@ -33,6 +45,38 @@ class InGround : AppCompatActivity(), SensorEventListener{
         pb = findViewById(R.id.circularProgressBar)
 
         setUpSensorStuff()
+
+        val currentDateTime = LocalDateTime.now()
+
+        val formatterDate = DateTimeFormatter.ofPattern("yyyyMMdd")
+        val formattedDate = currentDateTime.format(formatterDate)
+
+        var hour = currentDateTime.hour+8
+
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+            .reference.child("PI_12_$formattedDate")
+
+        Log.i("sound", "$formattedDate")
+
+        var lastQuery = fetchDatabaseRef.child("02").orderByKey().limitToLast(1)
+        val postListener = object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                for (snapshot in snapshot.children ){
+                    sound = snapshot.child("rand1").getValue().toString()
+                    Log.i("firebase", snapshot.getValue().toString())
+
+                    Log.i("sound", sound.toString())
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        }
+        lastQuery.addValueEventListener(postListener)
     }
 
     private fun setUpSensorStuff() {
@@ -45,17 +89,26 @@ class InGround : AppCompatActivity(), SensorEventListener{
             val proxy1 = event.values[0]
 
             text.text = "Sensor: $proxy1\n${proximity(proxy1)}"
-            //if (proxy1 == 0)
             pb.setProgressWithAnimation(proxy1)
         }
-
     }
 
     private fun proximity(proxy: Float): String {
         return when (proxy.toInt()) {
-            0 -> "Pitch black"
-            else -> "This light will blind you"
+            0 -> {
+                displaySlotMsg()
+                "No Car"
+            }
+            else -> {
+                displaySlotMsg()
+                "$sound slots empty++"
+            }
         }
+    }
+
+    private fun displaySlotMsg() {
+        data1.child("lcdtxt").setValue("$sound slots empty")
+        data1.child("camera").setValue("1")
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
