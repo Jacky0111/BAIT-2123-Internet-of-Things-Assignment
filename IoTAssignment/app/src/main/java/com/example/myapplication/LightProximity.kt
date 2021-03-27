@@ -5,22 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 
-class SmartStreet : AppCompatActivity() {
+class LightProximity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_smart_street)
+        setContentView(R.layout.activity_light_proximity)
 
         val backBtn = findViewById<ImageButton>(R.id.backButton)
         backBtn.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SmartStreet::class.java)
             startActivity(intent)
         }
 
-        val proximityLightBtn = findViewById<ImageButton>(R.id.proximityLightBtn)
-        proximityLightBtn.setOnClickListener{
-            val intent = Intent(this, LightProximity::class.java)
-            startActivity(intent)
-        }
 
     }
 }
