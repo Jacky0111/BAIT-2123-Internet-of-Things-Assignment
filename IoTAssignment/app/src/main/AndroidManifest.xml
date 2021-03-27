@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
+    <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".SmartAgriculture"></activity>
-        <activity android:name=".SmartArgriculture" />
+        <activity android:name=".LightProximity"></activity>
+        <activity android:name=".SmartAgriculture" />
         <activity android:name=".ParkingSensor" />
         <activity android:name=".InGround" />
         <activity android:name=".SmartBuilding" />
