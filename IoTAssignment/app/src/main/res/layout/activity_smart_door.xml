@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SmartBuilding">
+    tools:context=".SmartDoor">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -24,36 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="@string/smart_building"
+        android:text="Smart Door"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/cctv_camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/cardview_light_background"
-        app:layout_constraintBottom_toTopOf="@+id/smart_door"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stockIn"
-        app:srcCompat="@drawable/group_166"
-        android:contentDescription="@string/CCTV" />
-
-    <ImageButton
-        android:id="@+id/smart_door"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        android:backgroundTint="@color/cardview_light_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cctv_camera"
-        app:srcCompat="@drawable/group_167"
-        android:contentDescription="@string/SmartDoor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

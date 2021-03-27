@@ -10,56 +10,67 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
+import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
-class InGround : AppCompatActivity() {
+class InGround : AppCompatActivity(), SensorEventListener{
 
     private lateinit var sensorManager: SensorManager
     private var proxy : Sensor? = null
     private lateinit var text: TextView
+    private lateinit var pb: CircularProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_in_ground)
 
-//        val backBtn = findViewById<ImageButton>(R.id.backButton)
-//        backBtn.setOnClickListener{
-//            val intent = Intent(this, SmartParking::class.java)
-//            startActivity(intent)
-//        }
+        val backBtn = findViewById<ImageButton>(R.id.backButton)
+        backBtn.setOnClickListener{
+            val intent = Intent(this, SmartParking::class.java)
+            startActivity(intent)
+        }
 
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        proxy = sensorManager!!.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+        text = findViewById(R.id.tv_text)
+        pb = findViewById(R.id.circularProgressBar)
+
+        setUpSensorStuff()
     }
 
-//    private fun proxy(proxy: Float): String {
-//        return when (proxy.toInt()) {
-//            0 -> "Hello LCC"
-//            in 1..10 -> "Dark"
-//            else -> "Slots are available"
-//        }
-//    }
+    private fun setUpSensorStuff() {
+        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+        proxy = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)
+    }
 
-//    override fun onSensorChanged(event: SensorEvent?) {
-//        if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
-//            val yes = event.values[0]
-//
-//            text.text = "Sensor: $proxy\n${proxy(yes)}"
-//        }
-//    }
+    override fun onSensorChanged(event: SensorEvent?) {
+        if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
+            val proxy1 = event.values[0]
 
-//    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-//        TODO("Not yet implemented")
-//    }
+            text.text = "Sensor: $proxy1\n${proximity(proxy1)}"
+            //if (proxy1 == 0)
+            pb.setProgressWithAnimation(proxy1)
+        }
 
-//    override fun onResume() {
-//        super.onResume()
-//        sensorManager!!.registerListener(this, proxy, SensorManager.SENSOR_DELAY_NORMAL)
-//    }
-//
-//    override fun onPause() {
-//        super.onPause()
-//        sensorManager!!.unregisterListener(this)
-//    }
+    }
 
+    private fun proximity(proxy: Float): String {
+        return when (proxy.toInt()) {
+            0 -> "Pitch black"
+            else -> "This light will blind you"
+        }
+    }
+
+    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
+        return
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Register a listener for the sensor.
+        sensorManager.registerListener(this, proxy, SensorManager.SENSOR_DELAY_NORMAL)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        sensorManager.unregisterListener(this)
+    }
 
 }
