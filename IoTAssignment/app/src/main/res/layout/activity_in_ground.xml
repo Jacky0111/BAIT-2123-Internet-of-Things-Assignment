@@ -7,6 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".InGround">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbutton"
+        app:srcCompat="@drawable/left_arrow" />
+
+    <TextView
+        android:id="@+id/stockIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="88dp"
+        android:text="In-ground sensor"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold" />
+
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/circularProgressBar"
         android:layout_width="300dp"
@@ -24,8 +45,9 @@
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="CommuniThings"
         android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textColor="@color/teal_200"
         android:layout_centerInParent="true" />
+
 </RelativeLayout>
