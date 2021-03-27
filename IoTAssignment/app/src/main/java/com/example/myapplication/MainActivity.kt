@@ -47,5 +47,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SmartBuilding::class.java)
             startActivity(intent)
         }
+
+
     }
 }
