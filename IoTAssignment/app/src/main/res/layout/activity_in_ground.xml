@@ -38,7 +38,7 @@
         app:cpb_progressbar_color="#42A5F5"
         app:cpb_progressbar_width="10dp"
         app:cpb_round_border="true"
-        app:cpb_progress_max="500"
+        app:cpb_progress_max="10"
         android:layout_centerInParent="true"/>
 
     <TextView

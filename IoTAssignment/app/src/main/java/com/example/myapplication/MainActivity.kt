@@ -19,13 +19,11 @@ class MainActivity : AppCompatActivity() {
 //        data1.child("camera").setValue("1")
 //        data1.child("lcdtxt").setValue("lyfsuccessfully!")
 //        data1.child("oledsc").setValue("10")
+        data1.child("lcdscr").setValue("1")
         data1.child("lcdbkR").setValue("10")
         data1.child("lcdbkG").setValue("10")
         data1.child("lcdbkB").setValue("10")
 //        data1.child("buzzer").setValue("1")
-
-
-
 
         val smartParkingBtn = findViewById<ImageView>(R.id.smartParkingButton)
         smartParkingBtn.setOnClickListener{
