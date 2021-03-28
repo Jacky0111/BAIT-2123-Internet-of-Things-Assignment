@@ -31,4 +31,80 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/doorUnlock"
+        android:layout_width="148dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:contentDescription="@string/SmartDoor"
+        app:layout_constraintBottom_toTopOf="@+id/smart_door"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/group_171" />
+
+    <ImageButton
+        android:id="@+id/doorLock"
+        android:layout_width="148dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:contentDescription="@string/SmartDoor"
+        app:layout_constraintBottom_toTopOf="@+id/smart_door"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/group_173" />
+
+    <TextView
+        android:id="@+id/doorMessageTitle"
+        android:layout_width="149dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="456dp"
+        android:text="Message"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/doorMessage"
+        android:layout_width="328dp"
+        android:layout_height="104dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:gravity="center_vertical|left"
+        android:inputType=""
+        android:labelFor="@id/doorMessageTitle"
+        android:hint="Message you want to type (Max 16 char)"
+        app:layout_constraintStart_toStartOf="@id/doorMessageTitle"
+        app:layout_constraintTop_toBottomOf="@id/doorMessageTitle" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="110dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"   />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
