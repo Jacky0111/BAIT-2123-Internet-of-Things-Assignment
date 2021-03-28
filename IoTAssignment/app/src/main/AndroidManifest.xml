@@ -14,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".SmartDoor" />
-        
         <activity android:name=".CCTV" />
-
         <activity android:name=".LightProximity" />
         <activity android:name=".SmartAgriculture" />
         <activity android:name=".ParkingSensor" />
