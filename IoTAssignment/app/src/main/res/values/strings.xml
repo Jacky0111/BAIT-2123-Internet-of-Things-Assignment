@@ -23,4 +23,5 @@
     <string name="proximity_sensor">Proximity Sensor</string>
     <string name="smart_lighting">Smart Lighting</string>
     <string name="brightness_4000_lumens">Brightness: 4000 lumens</string>
+    <string name="distance_m">Distance (m): </string>
 </resources>
