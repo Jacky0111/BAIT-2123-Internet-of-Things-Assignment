@@ -13,14 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".smartDoorLock"></activity>
         <activity android:name=".SmartDoor" />
-<<<<<<< Updated upstream
+        
         <activity android:name=".CCTV" />
 
-=======
-        <activity android:name=".cctv" />
->>>>>>> Stashed changes
         <activity android:name=".LightProximity" />
         <activity android:name=".SmartAgriculture" />
         <activity android:name=".ParkingSensor" />
