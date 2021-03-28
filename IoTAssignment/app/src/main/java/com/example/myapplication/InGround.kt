@@ -25,10 +25,11 @@ class InGround : AppCompatActivity(), SensorEventListener{
     private var proxy : Sensor? = null
     private lateinit var text: TextView
     private lateinit var pb: CircularProgressBar
-    var sound : String? = null
+    var random : String? = null
 
     val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,18 +64,15 @@ class InGround : AppCompatActivity(), SensorEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 for (snapshot in snapshot.children ){
-                    sound = snapshot.child("rand1").getValue().toString()
+                    random = snapshot.child("rand1").getValue().toString()
                     Log.i("firebase", snapshot.getValue().toString())
-
-                    Log.i("sound", sound.toString())
+                    Log.i("sound", random.toString())
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         }
         lastQuery.addValueEventListener(postListener)
     }
@@ -96,18 +94,25 @@ class InGround : AppCompatActivity(), SensorEventListener{
     private fun proximity(proxy: Float): String {
         return when (proxy.toInt()) {
             0 -> {
-                displaySlotMsg()
-                "No Car"
+                displaySlotMsg1()
+                "No Car Detected+"
             }
             else -> {
-                displaySlotMsg()
-                "$sound slots empty++"
+                displaySlotMsg2()
+                "$random slots empty"
             }
         }
     }
 
-    private fun displaySlotMsg() {
-        data1.child("lcdtxt").setValue("$sound slots empty")
+    private fun displaySlotMsg1() {
+        //data1.child("lcdscr").setValue("1")
+        data1.child("lcdtxt").setValue("No Car Detected+")
+        data1.child("camera").setValue("1")
+    }
+
+    private fun displaySlotMsg2() {
+        //data1.child("lcdscr").setValue("1")
+        data1.child("lcdtxt").setValue("$random slots empty")
         data1.child("camera").setValue("1")
     }
 

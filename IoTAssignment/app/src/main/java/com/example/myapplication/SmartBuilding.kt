@@ -19,7 +19,7 @@ class SmartBuilding : AppCompatActivity() {
 
         val cctvBtn = findViewById<ImageView>(R.id.cctv_camera)
         cctvBtn.setOnClickListener{
-            val intent = Intent(this, cctv::class.java)
+            val intent = Intent(this, CCTV::class.java)
             startActivity(intent)
         }
 
