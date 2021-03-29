@@ -65,8 +65,8 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
             val light1 = event.values[0]
 
-            dis_val = "%.2f".format(light1)
-            distanceTxt.text = "Distance (m): %.2f".format(light1)
+            dis_val = "%.2f".format(light1*10)
+            distanceTxt.text = "Distance (m): %.2f".format(light1*10)
             defaultBrightness.text = "${brightness(light1)}"
             pb.setProgressWithAnimation(light1)
         }
@@ -92,7 +92,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("255")
         data1.child("lcdbkB").setValue("0")
-        data1.child("lcdtxt").setValue("Distance:$dis_val $m ")
+        data1.child("lcdtxt").setValue("Distance:$dis_val $m")
         data1.child("camera").setValue("1")
         //data1.child("lcdtxt").setValue("Distance: " + defaultBrightness.text.substring(14, defaultBrightness.text.indexOf("\n")) + "m")
     }
@@ -102,7 +102,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         data1.child("lcdbkR").setValue("191")
         data1.child("lcdbkG").setValue("250")
         data1.child("lcdbkB").setValue("0")
-        data1.child("lcdtxt").setValue("Distance:$dis_val $m ")
+        data1.child("lcdtxt").setValue("Distance:$dis_val $m")
         data1.child("camera").setValue("1")
     }
 
