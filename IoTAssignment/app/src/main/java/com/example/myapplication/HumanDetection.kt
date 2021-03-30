@@ -48,7 +48,7 @@ class HumanDetection : AppCompatActivity() {
 
         val lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
 
-        var count: Int = 0
+        var count = 0
 
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
