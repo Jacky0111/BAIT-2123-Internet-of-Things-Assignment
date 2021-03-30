@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication">
 
-
     <uses-feature
         android:name="android.hardware.sensor.proximity"
         android:required="true" />
@@ -14,6 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
+        <activity android:name=".TemperatureHumidity" />
+        <activity android:name=".SoilHumidity" />
+        <activity android:name=".SmartDoor" />
+        <activity android:name=".CCTV" />
         <activity android:name=".LightProximity" />
         <activity android:name=".SmartAgriculture" />
         <activity android:name=".ParkingSensor" />

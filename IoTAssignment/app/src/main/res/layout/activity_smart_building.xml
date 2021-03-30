@@ -31,4 +31,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/cctv_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/smart_door"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/group_166"
+        android:contentDescription="@string/CCTV" />
+
+    <ImageButton
+        android:id="@+id/smart_door"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cctv_camera"
+        app:srcCompat="@drawable/group_167"
+        android:contentDescription="@string/SmartDoor" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

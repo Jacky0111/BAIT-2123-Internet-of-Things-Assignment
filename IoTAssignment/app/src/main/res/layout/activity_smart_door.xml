@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmartDoor">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow" />
+
+    <TextView
+        android:id="@+id/stockIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="88dp"
+        android:text="Smart Door"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/doorlock"
+        android:layout_width="148dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:contentDescription="@string/SmartDoor"
+        app:layout_constraintBottom_toTopOf="@+id/smart_door"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/group_171" />
+
+    <ImageButton
+        android:id="@+id/doorUnlock"
+        android:layout_width="148dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:contentDescription="@string/SmartDoor"
+        app:layout_constraintBottom_toTopOf="@+id/smart_door"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn"
+        app:srcCompat="@drawable/group_173" />
+
+    <TextView
+        android:id="@+id/doorMessageTitle"
+        android:layout_width="254dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="404dp"
+        android:text="Live Message"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/doorMessage"
+        android:layout_width="263dp"
+        android:layout_height="96dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:gravity="center_vertical|left"
+        android:hint="Message you want to type (Max 16 char)"
+        android:importantForAutofill="no"
+        android:inputType=""
+        android:labelFor="@id/doorMessageTitle"
+        app:layout_constraintStart_toStartOf="@id/doorMessageTitle"
+        app:layout_constraintTop_toBottomOf="@id/doorMessageTitle" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="110dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

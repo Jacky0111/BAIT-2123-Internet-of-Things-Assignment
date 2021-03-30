@@ -22,6 +22,9 @@
     <string name="parking_sensor">Parking Sensor</string>
     <string name="proximity_sensor">Proximity Sensor</string>
     <string name="smart_lighting">Smart Lighting</string>
-    <string name="brightness_4000_lumens">Brightness: 4000 lumens</string>
-    <string name="distance_m">Distance (m): </string>
+    <string name="cctv">CCTV</string>
+    <string name="CCTV">TODO</string>
+    <string name="SmartDoor">TODO</string>
+    <string name="soil_humidity">Soil Humidity</string>
+    <string name="temperature_humidity"><![CDATA[Temperature & Humidity]]></string>
 </resources>
