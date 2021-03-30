@@ -35,4 +35,5 @@
     <string name="_60cm">/60cm</string>
     <string name="_0">0</string>
     <string name="_7m">/7m</string>
+    <string name="accumulated_number">Accumulated number:</string>
 </resources>
