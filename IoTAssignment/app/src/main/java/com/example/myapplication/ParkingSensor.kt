@@ -46,8 +46,6 @@ class ParkingSensor : AppCompatActivity() {
         val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
                 .reference.child("PI_12_$formattedDate")
 
-//        centimeter = findViewById(R.id.parkingData)
-
         var lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
