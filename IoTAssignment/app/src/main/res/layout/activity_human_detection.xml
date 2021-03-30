@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HumanDetection">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow" />
+
+    <TextView
+        android:id="@+id/smartStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/human_detection"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgressBar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="30dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progress_max="10"
+        app:cpb_progressbar_color="#1a1aff"
+        app:cpb_progressbar_width="30dp"
+        app:cpb_round_border="true" />
+
+    <TextView
+        android:id="@+id/cmDetected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/_0"
+        android:textColor="#253A4B"
+        android:textSize="75sp" />
+
+    <TextView
+        android:id="@+id/tv_totalMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cmDetected"
+        android:layout_centerInParent="true"
+        android:text="@string/_7m"
+        android:textColor="#253A4B"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/accumulate_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="564dp"
+        android:layout_marginStart="55dp"
+        android:textColor="#253A4B"
+        android:textSize="25sp"
+        android:text="@string/accumulated_number" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="555dp"
+        android:layout_marginStart="311dp"
+        android:layout_marginBottom="70dp"
+        android:textStyle="bold"
+        android:text="@string/_0"
+        android:textColor="#253A4B"
+        android:textSize="35sp" />
+
+    <!--    <com.mikhaellopez.circularprogressbar.CircularProgressBar-->
+<!--        android:id="@+id/circularProgressBar"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="200dp"-->
+<!--        app:cpb_background_progressbar_color="#f2f2f2"-->
+<!--        app:cpb_background_progressbar_width="20dp"-->
+<!--        app:cpb_progress_direction="to_right"-->
+<!--        app:cpb_progressbar_color="#0ceb1e"-->
+<!--        app:cpb_progressbar_width="15dp"-->
+<!--        app:cpb_round_border="true"-->
+<!--        app:cpb_progress_max="60"-->
+<!--        android:layout_centerInParent="true"/>-->
+
+
+</RelativeLayout>
