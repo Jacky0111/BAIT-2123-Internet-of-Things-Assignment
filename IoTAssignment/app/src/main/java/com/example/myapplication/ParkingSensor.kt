@@ -16,6 +16,8 @@ import java.time.format.DateTimeFormatter
 
 class ParkingSensor : AppCompatActivity() {
     private lateinit var text: TextView
+    private lateinit var msg1: TextView
+    private lateinit var msg2: TextView
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
 
@@ -33,6 +35,7 @@ class ParkingSensor : AppCompatActivity() {
         }
 
         text = findViewById(R.id.tv_cmDetected)
+        //msg1 = findViewById(R.id.display_msg1)
         pb = findViewById(R.id.circularProgressBar)
 
         val currentDateTime = LocalDateTime.now()
@@ -58,12 +61,14 @@ class ParkingSensor : AppCompatActivity() {
                     pb.setProgressWithAnimation(ultrasonic!!.toFloat())
 
                     if(ultrasonic!!.toFloat() <= 30.0) {
+                        //msg1.text = "Slot is occupied"
                         data1.child("relay1").setValue("0")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is occupied")
                         data1.child("camera").setValue("1")
                     }
                     else{
+                        //msg1.text = "Slot is free now"
                         data1.child("relay1").setValue("1")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is free now")

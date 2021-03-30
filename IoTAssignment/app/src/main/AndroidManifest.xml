@@ -13,11 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".SmartLighting"></activity>
+        <activity android:name=".SmartLighting" />
         <activity android:name=".TemperatureHumidity" />
         <activity android:name=".SoilHumidity" />
         <activity android:name=".SmartDoor" />
-        <activity android:name=".CCTV" />
         <activity android:name=".LightProximity" />
         <activity android:name=".SmartAgriculture" />
         <activity android:name=".ParkingSensor" />
