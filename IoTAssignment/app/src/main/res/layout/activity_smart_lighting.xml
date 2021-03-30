@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CCTV">
+    tools:context=".SmartLighting">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="CCTV"
+        android:text="Smart Lighting"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"
