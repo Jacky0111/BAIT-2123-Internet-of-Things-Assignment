@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="@string/smart_building"
+        android:text="Smart Building"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockIn"
-        app:srcCompat="@drawable/group_166"
+        app:srcCompat="@drawable/group_239"
         android:contentDescription="@string/CCTV" />
 
     <ImageButton
