@@ -42,11 +42,10 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         distanceTxt = findViewById(R.id.dis_text)
         pb = findViewById(R.id.circularProgressBar)
 
-
         distanceTxt.text = "Distance: > 50m "
 
         data1.child("lcdbkR").setValue("255")
-        data1.child("lcdbkG").setValue("255")
+        data1.child("lcdbkG").setValue("215")
         data1.child("lcdbkB").setValue("0")
         data1.child("lcdtxt").setValue("Distance: > 50m ")
         data1.child("camera").setValue("1")
@@ -89,10 +88,12 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
 
     private fun pushBrightnessData() {
         val m:String = "m"
+        data1.child("relay1").setValue("0")
+        data1.child("relay2").setValue("1")
         data1.child("ledlgt").setValue("1")
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("255")
-        data1.child("lcdbkB").setValue("0")
+        data1.child("lcdbkB").setValue("102")
         data1.child("lcdtxt").setValue("Distance:$dis_val $m")
         data1.child("camera").setValue("1")
         //data1.child("lcdtxt").setValue("Distance: " + defaultBrightness.text.substring(14, defaultBrightness.text.indexOf("\n")) + "m")
@@ -100,9 +101,11 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
 
     private fun pushBrightnessData2() {
         val m:String = "m"
+        data1.child("relay1").setValue("0")
+        data1.child("relay2").setValue("1")
         data1.child("ledlgt").setValue("1")
-        data1.child("lcdbkR").setValue("191")
-        data1.child("lcdbkG").setValue("250")
+        data1.child("lcdbkR").setValue("255")
+        data1.child("lcdbkG").setValue("215")
         data1.child("lcdbkB").setValue("0")
         data1.child("lcdtxt").setValue("Distance:$dis_val $m")
         data1.child("camera").setValue("1")

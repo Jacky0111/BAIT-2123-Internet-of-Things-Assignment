@@ -34,6 +34,6 @@
     <string name="human_detection">Human Detection</string>
     <string name="_60cm">/60cm</string>
     <string name="_0">0</string>
-    <string name="_7m">/7m</string>
-    <string name="accumulated_number">Accumulated number:</string>
+    <string name="_7m">/5m</string>
+    <string name="accumulated_number">Accumulated people pass by:</string>
 </resources>
