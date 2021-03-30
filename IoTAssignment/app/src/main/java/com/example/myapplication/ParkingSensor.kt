@@ -56,9 +56,7 @@ class ParkingSensor : AppCompatActivity() {
                     Log.i("sound", "$ultrasonic")
 
                     text.setText(ultrasonic)
-
-                    //var ultra1 = text.values[0]
-                    //pb.setProgressWithAnimation(ultra1)
+                    pb.setProgressWithAnimation(ultrasonic!!.toFloat())
 
                     if(ultrasonic!!.toFloat() <= 30.0) {
                         data1.child("relay1").setValue("0")
