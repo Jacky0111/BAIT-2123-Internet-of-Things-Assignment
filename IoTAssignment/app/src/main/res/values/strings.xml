@@ -25,4 +25,6 @@
     <string name="cctv">CCTV</string>
     <string name="CCTV">TODO</string>
     <string name="SmartDoor">TODO</string>
+    <string name="soil_humidity">Soil Humidity</string>
+    <string name="temperature_humidity"><![CDATA[Temperature & Humidity]]></string>
 </resources>

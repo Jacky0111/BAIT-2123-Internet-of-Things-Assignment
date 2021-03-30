@@ -59,9 +59,10 @@ class ParkingSensor : AppCompatActivity() {
 
                     text.setText(ultrasonic)
 
-                    if(ultrasonic!! >= "30"){
-                        //var ultra1 = text.values[0]
-                        //pb.setProgressWithAnimation(ultra1)
+                    //var ultra1 = text.values[0]
+                    //pb.setProgressWithAnimation(ultra1)
+
+                    if(ultrasonic!!.toFloat() <= 30.0) {
                         data1.child("relay1").setValue("0")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is occupied")
@@ -71,6 +72,7 @@ class ParkingSensor : AppCompatActivity() {
                         data1.child("relay1").setValue("1")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is free now")
+                        data1.child("camera").setValue("1")
                     }
                 }
             }
