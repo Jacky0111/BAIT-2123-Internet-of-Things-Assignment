@@ -29,6 +29,8 @@ class SmartDoor : AppCompatActivity() {
             data1.child("relay1").setValue("0")
             data1.child("relay2").setValue("4")
             data1.child("camera").setValue("1")
+            data1.child("ledlgt").setValue("2")
+            data1.child("buzzer").setValue("1")
             //Build Dialog
             val builder = AlertDialog.Builder(this)
             //Set title for alert dialog
@@ -63,6 +65,8 @@ class SmartDoor : AppCompatActivity() {
             data1.child("relay1").setValue("1")
             data1.child("relay2").setValue("1")
             data1.child("camera").setValue("1")
+            data1.child("ledlgt").setValue("2")
+            data1.child("buzzer").setValue("1")
             //Build Dialog
             val builder = AlertDialog.Builder(this)
             //Set title for alert dialog
@@ -94,13 +98,38 @@ class SmartDoor : AppCompatActivity() {
 
             data1.child("lcdtxt").setValue(myDM.text.toString()) // Must 16 Characters
             data1.child("camera").setValue("1")
-            data1.child("lcdbkR").setValue("255")
-            data1.child("lcdbkG").setValue("0")
-            data1.child("lcdbkB").setValue("0")
-            data1.child("relay1").setValue("1")
+            data1.child("lcdbkR").setValue("10")
+            data1.child("lcdbkG").setValue("10")
+            data1.child("lcdbkB").setValue("10")
+            data1.child("relay1").setValue("0")
             data1.child("relay2").setValue("0")
+            data1.child("ledlgt").setValue("2")
             data1.child("oledsc").setValue("1")
             data1.child("buzzer").setValue("1")
+
+            //Build Dialog
+            val builder = AlertDialog.Builder(this)
+            //Set title for alert dialog
+            builder.setTitle("Dialog")
+            //Set message for alert dialog
+            builder.setMessage("Live Message is Sent!!!")
+
+            //performing positive action
+            builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
+                //Toast.makeText(this, "New item added successfully!", Toast.LENGTH_SHORT).show()
+            })
+
+            //performing negative action
+            builder.setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        //Toast.makeText(this, "Cancelled Add New Item!", Toast.LENGTH_SHORT).show()
+                    })
+
+            //Create the AlertDialog
+            val alertDialog: AlertDialog = builder.create()
+            //set other dialog properties
+            alertDialog.setCancelable(false)
+            alertDialog.show()
 
         }
 
