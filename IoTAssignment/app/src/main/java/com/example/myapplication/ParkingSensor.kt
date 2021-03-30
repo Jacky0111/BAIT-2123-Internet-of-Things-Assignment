@@ -15,7 +15,6 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class ParkingSensor : AppCompatActivity() {
-    //private lateinit var centimeter?: TextView
     private lateinit var text: TextView
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
