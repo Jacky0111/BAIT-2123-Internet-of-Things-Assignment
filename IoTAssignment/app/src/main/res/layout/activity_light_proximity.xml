@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="@string/distance_50m"
     tools:context=".LightProximity">
 
     <ImageButton
@@ -31,23 +32,34 @@
         android:id="@+id/circularProgressBar"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_centerInParent="true"
         app:cpb_background_progressbar_color="#b6bbd8"
-        app:cpb_background_progressbar_width="5dp"
+        app:cpb_background_progressbar_width="30dp"
         app:cpb_progress_direction="to_right"
-        app:cpb_progressbar_color="#42A5F5"
-        app:cpb_progressbar_width="10dp"
-        app:cpb_round_border="true"
-        app:cpb_progress_max="25000"
-        android:layout_centerInParent="true"/>
+        app:cpb_progress_max="10"
+        app:cpb_progressbar_color="#1a1aff"
+        app:cpb_progressbar_width="30dp"
+        app:cpb_round_border="true" />
+
+    <TextView
+        android:id="@+id/dis_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_text"
+        android:layout_marginHorizontal="95dp"
+        android:layout_centerInParent="true"
+        android:text="@string/distance_50m"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="1000dp"
+        android:text="@string/brightness_4000_lumens"
         android:textColor="@color/black"
-        android:layout_centerInParent="true" />
-
+        android:textSize="20sp" />
 
 </RelativeLayout>

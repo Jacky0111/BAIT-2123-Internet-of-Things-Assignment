@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name=".SmartLighting" />
+        <activity android:name=".HumanDetection" />
         <activity android:name=".TemperatureHumidity" />
         <activity android:name=".SoilHumidity" />
         <activity android:name=".SmartDoor" />

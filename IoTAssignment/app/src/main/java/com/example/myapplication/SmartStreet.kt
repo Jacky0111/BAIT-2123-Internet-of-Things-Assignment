@@ -22,5 +22,11 @@ class SmartStreet : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val humanDetectionBtn = findViewById<ImageButton>(R.id.humanDetectionButton)
+        humanDetectionBtn.setOnClickListener{
+            val intent = Intent(this, HumanDetection::class.java)
+            startActivity(intent)
+        }
+
     }
 }
