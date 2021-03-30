@@ -43,7 +43,7 @@
         app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockIn"
-        app:srcCompat="@drawable/group_173" />
+        app:srcCompat="@drawable/group_174" />
 
     <ImageButton
         android:id="@+id/doorUnlock"

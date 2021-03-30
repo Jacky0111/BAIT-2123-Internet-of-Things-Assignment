@@ -24,11 +24,91 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="Temperature &amp; Humidity"
+        android:text="@string/temp_humd"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temperature4"
+        android:layout_width="257dp"
+        android:layout_height="31dp"
+        android:text="@string/Temperature"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/temperature_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn" />
+
+    <TextView
+        android:id="@+id/Humidity5"
+        android:layout_width="257dp"
+        android:layout_height="31dp"
+        android:text="@string/Humidity"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temperature_output" />
+
+    <TextView
+        android:id="@+id/weather6"
+        android:layout_width="257dp"
+        android:layout_height="31dp"
+        android:text="@string/weather"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/humidity_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_output" />
+
+    <Button
+        android:id="@+id/check_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weather_output"
+        android:text="@string/Check"/>
+
+    <TextView
+        android:id="@+id/temperature_output"
+        android:layout_width="257dp"
+        android:layout_height="31dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/Humidity5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature4" />
+
+    <TextView
+        android:id="@+id/humidity_output"
+        android:layout_width="259dp"
+        android:layout_height="28dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/weather6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Humidity5"
+        app:layout_constraintHorizontal_bias="0.363"/>
+
+    <TextView
+        android:id="@+id/weather_output"
+        android:layout_width="257dp"
+        android:layout_height="31dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/check_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather6"
+        app:layout_constraintVertical_bias="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,4 +36,12 @@
     <string name="_0">0</string>
     <string name="_7m">/5m</string>
     <string name="accumulated_number">Accumulated people pass by:</string>
+    <string name="temp_humd">Temperature &amp; Humidity</string>
+    <string name="check_humidity">Check Humidity</string>
+    <string name="Status">Status:</string>
+    <string name="Temperature">Temperature:</string>
+    <string name="Humidity">Humidity:</string>
+    <string name="weather">Weather:</string>
+    <string name="Check">Check</string>
+    <string name="soil_humidity1">Soil Humidity:</string>
 </resources>
