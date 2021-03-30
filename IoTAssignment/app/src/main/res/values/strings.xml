@@ -27,4 +27,12 @@
     <string name="SmartDoor">TODO</string>
     <string name="soil_humidity">Soil Humidity</string>
     <string name="temperature_humidity"><![CDATA[Temperature & Humidity]]></string>
+    <string name="distance_m">distance m</string>
+    <string name="brightness_4000_lumens">Brightness 4000 lumens</string>
+    <string name="distance_50m"><![CDATA[Distance: > 50m]]></string>
+    <string name="human_detector">Human Detector</string>
+    <string name="human_detection">Human Detection</string>
+    <string name="_60cm">/60cm</string>
+    <string name="_0">0</string>
+    <string name="_7m">/7m</string>
 </resources>

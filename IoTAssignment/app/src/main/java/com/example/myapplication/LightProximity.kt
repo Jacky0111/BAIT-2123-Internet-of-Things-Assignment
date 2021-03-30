@@ -89,6 +89,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
 
     private fun pushBrightnessData() {
         val m:String = "m"
+        data1.child("ledlgt").setValue("1")
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("255")
         data1.child("lcdbkB").setValue("0")
@@ -99,6 +100,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
 
     private fun pushBrightnessData2() {
         val m:String = "m"
+        data1.child("ledlgt").setValue("1")
         data1.child("lcdbkR").setValue("191")
         data1.child("lcdbkG").setValue("250")
         data1.child("lcdbkB").setValue("0")
