@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -22,6 +23,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
     private lateinit var distanceTxt: TextView
     private lateinit var pb: CircularProgressBar
     private lateinit var dis_val: String
+    private lateinit var status: ImageView
 
     private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
     private val data1 = database1.getReference("PI_12_CONTROL")
@@ -38,11 +40,12 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         }
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        defaultBrightness = findViewById(R.id.tv_text)
+        defaultBrightness = findViewById(R.id.brightness_val)
         distanceTxt = findViewById(R.id.dis_text)
+        status = findViewById(R.id.lightColor)
         pb = findViewById(R.id.circularProgressBar)
 
-        distanceTxt.text = "Distance: > 50m "
+        distanceTxt.text = ">50"
 
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("140")
@@ -65,7 +68,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
             val light1 = event.values[0]
 
             dis_val = "%.2f".format(light1*10)
-            distanceTxt.text = "Distance (m): %.2f".format(light1*10)
+            distanceTxt.text = "%.2f".format(light1*10)
             defaultBrightness.text = "${brightness(light1)}"
             pb.setProgressWithAnimation(light1)
         }
@@ -76,38 +79,37 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
         distanceComputed = when (brightness.toInt()*10){
             in 0..50 -> {
                 pushBrightnessData()
-                "Brightness: 5000 lumens"
+                "5000"
             }
             else -> {
                 pushBrightnessData2()
-                "Brightness: 4000 lumens"
+                "4000"
             }
         }
-        return distanceComputed;
+        return distanceComputed
     }
 
     private fun pushBrightnessData() {
-        val m:String = "m"
+        status.setImageResource(R.drawable.lightbulb__1_)
         data1.child("relay1").setValue("0")
         data1.child("relay2").setValue("1")
         data1.child("ledlgt").setValue("1")
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("255")
         data1.child("lcdbkB").setValue("0")
-        data1.child("lcdtxt").setValue("Distance:$dis_val $m")
+        data1.child("lcdtxt").setValue("Distance:$dis_val m")
         data1.child("camera").setValue("1")
-        //data1.child("lcdtxt").setValue("Distance: " + defaultBrightness.text.substring(14, defaultBrightness.text.indexOf("\n")) + "m")
     }
 
     private fun pushBrightnessData2() {
-        val m:String = "m"
+        status.setImageResource(R.drawable.lightbulb)
         data1.child("relay1").setValue("0")
         data1.child("relay2").setValue("1")
         data1.child("ledlgt").setValue("1")
         data1.child("lcdbkR").setValue("255")
         data1.child("lcdbkG").setValue("140")
         data1.child("lcdbkB").setValue("0")
-        data1.child("lcdtxt").setValue("Distance:$dis_val $m")
+        data1.child("lcdtxt").setValue("Distance:$dis_val m")
         data1.child("camera").setValue("1")
     }
 
