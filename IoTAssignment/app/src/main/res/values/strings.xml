@@ -53,4 +53,5 @@
     <string name="cmDetected">0</string>
     <string name="totalMax">/70cm</string>
     <string name="slot_status">Slot Status</string>
+    <string name="lightColor">TODO</string>
 </resources>

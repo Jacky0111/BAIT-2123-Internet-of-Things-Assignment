@@ -121,10 +121,8 @@ class InGround : AppCompatActivity(), SensorEventListener{
 
     private fun displaySlotMsg2() {
         status1.setImageDrawable(getResources().getDrawable(R.drawable.group_190))
-        if(random!!.toFloat() < 10.0)
-            msg1.text = "The car park is full"
-        else
-            msg1.text = "$random slots available"
+        msg1.text = "Barrier gate is opened"
+        msg3.text = "$random slots available"
         data1.child("lcdtxt").setValue("Car Detected++++")
         data1.child("camera").setValue("1")
     }

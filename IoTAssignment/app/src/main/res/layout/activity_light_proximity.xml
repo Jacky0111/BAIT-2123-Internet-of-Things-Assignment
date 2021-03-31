@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="@string/distance_50m"
+    android:contentDescription="distance_50m"
     tools:context=".LightProximity">
 
     <ImageButton
@@ -71,7 +71,8 @@
         android:layout_height="141dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="500dp"
-        app:srcCompat="@drawable/lightbulb" />
+        app:srcCompat="@drawable/lightbulb"
+        android:contentDescription="@string/lightColor" />
 
     <TextView
         android:id="@+id/tv_text"
