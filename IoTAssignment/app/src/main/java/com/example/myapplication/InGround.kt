@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -25,6 +26,9 @@ class InGround : AppCompatActivity(), SensorEventListener{
     private lateinit var sensorManager: SensorManager
     private var proxy : Sensor? = null
     private lateinit var text: TextView
+    private lateinit var msg1: TextView
+    private lateinit var msg3: TextView
+    private lateinit var status1: ImageView
     private lateinit var pb: CircularProgressBar
     var random : String? = null
 
@@ -42,6 +46,9 @@ class InGround : AppCompatActivity(), SensorEventListener{
         }
 
         text = findViewById(R.id.tv_text)
+        msg1 = findViewById(R.id.display_msg1)
+        msg3 = findViewById(R.id.display_msg3)
+        status1 = findViewById(R.id.barrier_gate)
         pb = findViewById(R.id.circularProgressBar)
 
         setUpSensorStuff()
@@ -99,18 +106,26 @@ class InGround : AppCompatActivity(), SensorEventListener{
             }
             else -> {
                 displaySlotMsg2()
-                "$random slots empty"
+                "Car Detected"
             }
         }
     }
 
     private fun displaySlotMsg1() {
+        status1.setImageDrawable(getResources().getDrawable(R.drawable.group_192))
+        msg1.text = "Barrier gate is closed"
+        msg3.text = " "
         data1.child("lcdtxt").setValue("No Car Detected+")
         data1.child("camera").setValue("1")
     }
 
     private fun displaySlotMsg2() {
-        data1.child("lcdtxt").setValue("$random slots empty")
+        status1.setImageDrawable(getResources().getDrawable(R.drawable.group_190))
+        if(random!!.toFloat() < 10.0)
+            msg1.text = "The car park is full"
+        else
+            msg1.text = "$random slots available"
+        data1.child("lcdtxt").setValue("Car Detected++++")
         data1.child("camera").setValue("1")
     }
 

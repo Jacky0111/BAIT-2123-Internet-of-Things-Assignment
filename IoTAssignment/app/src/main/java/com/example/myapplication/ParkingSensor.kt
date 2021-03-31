@@ -12,15 +12,13 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
-import java.text.DecimalFormat
-import java.text.NumberFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class ParkingSensor : AppCompatActivity() {
     private lateinit var text: TextView
-    private lateinit var msg1: TextView
-    private lateinit var status: ImageView
+    private lateinit var msg2: TextView
+    private lateinit var status2: ImageView
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
 
@@ -38,8 +36,8 @@ class ParkingSensor : AppCompatActivity() {
         }
 
         text = findViewById(R.id.tv_cmDetected)
-        msg1 = findViewById(R.id.display_msg1)
-        status = findViewById(R.id.slot_status)
+        msg2 = findViewById(R.id.display_msg2)
+        status2 = findViewById(R.id.slot_status)
         pb = findViewById(R.id.circularProgressBar)
 
         val currentDateTime = LocalDateTime.now()
@@ -67,16 +65,16 @@ class ParkingSensor : AppCompatActivity() {
                     pb.setProgressWithAnimation(ultrasonic!!.toFloat())
 
                     if(ultrasonic!!.toFloat() <= 30.0) {
-                        status.setImageDrawable(getResources().getDrawable(R.drawable.group_180))
-                        msg1.text = "Slot is occupied"
+                        status2.setImageDrawable(getResources().getDrawable(R.drawable.group_180))
+                        msg2.text = "Slot is occupied"
                         data1.child("relay1").setValue("0")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is occupied")
                         data1.child("camera").setValue("1")
                     }
                     else{
-                        status.setImageDrawable(getResources().getDrawable(R.drawable.group_179))
-                        msg1.text = "Slot is free now"
+                        status2.setImageDrawable(getResources().getDrawable(R.drawable.group_179))
+                        msg2.text = "Slot is free now"
                         data1.child("relay1").setValue("1")
                         data1.child("relay2").setValue("1")
                         data1.child("lcdtxt").setValue("Slot is free now")

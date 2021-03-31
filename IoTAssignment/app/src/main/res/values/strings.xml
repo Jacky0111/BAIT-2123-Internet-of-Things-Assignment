@@ -18,7 +18,6 @@
     <string name="smart_agriculture">Smart Agriculture</string>
     <string name="smart_building">Smart Building</string>
     <string name="title_activity_tt">tt</string>
-    <string name="in_ground_sensor">In-ground sensor</string>
     <string name="parking_sensor">Parking Sensor</string>
     <string name="proximity_sensor">Proximity Sensor</string>
     <string name="smart_lighting">Smart Lighting</string>
@@ -43,7 +42,15 @@
     <string name="weather">Weather:</string>
     <string name="Check">Check</string>
     <string name="soil_humidity1">Soil Humidity:</string>
+
     <string name="_4000">4000</string>
     <string name="distance_in_meter">Distance (m)</string>
     <string name="_50"><![CDATA[>50]]></string>
+
+    <string name="in_ground_sensor">In-ground sensor</string>
+    <string name="communithings">CommuniThings</string>
+    <string name="barrier_gate">Barrier Gate</string>
+    <string name="cmDetected">0</string>
+    <string name="totalMax">/70cm</string>
+    <string name="slot_status">Slot Status</string>
 </resources>
