@@ -1,158 +1,34 @@
 {
   "project_info": {
-    "project_number": "265617828931",
-    "firebase_url": "https://bait2123-202101-12-default-rtdb.firebaseio.com",
-    "project_id": "bait2123-202101-12",
-    "storage_bucket": "bait2123-202101-12.appspot.com"
+    "project_number": "891519986151",
+    "firebase_url": "https://bait2123-202101-12-2-default-rtdb.firebaseio.com",
+    "project_id": "bait2123-202101-12-2",
+    "storage_bucket": "bait2123-202101-12-2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:265617828931:android:6b4b786398af5fdddc78f6",
-        "android_client_info": {
-          "package_name": "com.example.iot_asgm"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC1Ve5hLS6PmZP_7UywF2QhzcOBNeYiPXo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:265617828931:android:b27fe2c2aab1ad4cdc78f6",
-        "android_client_info": {
-          "package_name": "com.example.iot_asgmTWS"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC1Ve5hLS6PmZP_7UywF2QhzcOBNeYiPXo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:265617828931:android:7b7ebef03671b2fcdc78f6",
-        "android_client_info": {
-          "package_name": "com.example.iot_assignment"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC1Ve5hLS6PmZP_7UywF2QhzcOBNeYiPXo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:265617828931:android:b6ac79424f9026ecdc78f6",
+        "mobilesdk_app_id": "1:891519986151:android:a2dfe3d6bf7618d4013542",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
+          "client_id": "891519986151-g0ge1j3ftc4gtjc0me3d4vd5e9b7h5a8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC1Ve5hLS6PmZP_7UywF2QhzcOBNeYiPXo"
+          "current_key": "AIzaSyD4vSDc4brioJ3q6c7toP1HgsHTMVYM0lk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:265617828931:android:d4162f9207ba360adc78f6",
-        "android_client_info": {
-          "package_name": "com.nev.apartie"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "265617828931-n5m417okp7vmhd1u04o3t734u05biv4t.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.nev.apartie",
-            "certificate_hash": "4b40ca0e813f3922d1f83d0c035e22df2cc3602c"
-          }
-        },
-        {
-          "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC1Ve5hLS6PmZP_7UywF2QhzcOBNeYiPXo"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "265617828931-3usoejc9sbclpn4f68fidqeuldl8q68n.apps.googleusercontent.com",
+              "client_id": "891519986151-g0ge1j3ftc4gtjc0me3d4vd5e9b7h5a8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
