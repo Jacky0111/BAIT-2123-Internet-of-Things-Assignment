@@ -13,7 +13,7 @@ class SmartDoor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smart_door)
 
-        val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+        val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
         val data1 = database1.getReference("PI_12_CONTROL")
 
         val backBtn = findViewById<ImageButton>(R.id.backButton)
@@ -28,6 +28,9 @@ class SmartDoor : AppCompatActivity() {
             data1.child("lcdtxt").setValue("Door Is Locked!!")
             data1.child("relay1").setValue("0")
             data1.child("relay2").setValue("4")
+            data1.child("lcdbkR").setValue("10")
+            data1.child("lcdbkG").setValue("10")
+            data1.child("lcdbkB").setValue("10")
             data1.child("camera").setValue("1")
             data1.child("ledlgt").setValue("2")
             data1.child("buzzer").setValue("1")
@@ -63,6 +66,9 @@ class SmartDoor : AppCompatActivity() {
 
             data1.child("lcdtxt").setValue("Door Is Unlocked")
             data1.child("relay1").setValue("1")
+            data1.child("lcdbkR").setValue("10")
+            data1.child("lcdbkG").setValue("10")
+            data1.child("lcdbkB").setValue("10")
             data1.child("relay2").setValue("1")
             data1.child("camera").setValue("1")
             data1.child("ledlgt").setValue("2")

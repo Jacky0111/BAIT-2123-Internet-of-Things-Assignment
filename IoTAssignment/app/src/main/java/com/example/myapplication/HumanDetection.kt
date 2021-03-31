@@ -11,6 +11,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -20,7 +22,7 @@ class HumanDetection : AppCompatActivity() {
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
 
-    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +31,7 @@ class HumanDetection : AppCompatActivity() {
 
         val backBtn = findViewById<ImageButton>(R.id.backButton)
         backBtn.setOnClickListener{
-            val intent = Intent(this, LightProximity::class.java)
+            val intent = Intent(this, SmartStreet::class.java)
             startActivity(intent)
         }
 
@@ -43,7 +45,8 @@ class HumanDetection : AppCompatActivity() {
         val formattedDate = currentDateTime.format(formatterDate)
 
         val hour = currentDateTime.hour + 8
-
+        //val f: NumberFormat = DecimalFormat("02")
+        //val hourTEMP = f.format(currentDateTime.hour)
         val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
 
         val lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
@@ -64,13 +67,13 @@ class HumanDetection : AppCompatActivity() {
                     if(ultrasonic!!.toFloat() <= 50.0) {
                         count++
                         data1.child("ledlgt").setValue("1")
-                        data1.child("lcdtxt").setValue("Total num ppl:$count")
+                        data1.child("lcdtxt").setValue("Total num ppl:$count ")
                         data1.child("camera").setValue("1")
                         numTextView.text = count.toString()
                     }
                     else {
                         data1.child("ledlgt").setValue("1")
-                        data1.child("lcdtxt").setValue("Total num ppl:$count")
+                        data1.child("lcdtxt").setValue("Total num ppl:$count ")
                         data1.child("camera").setValue("1")
                         numTextView.text = count.toString()
                     }

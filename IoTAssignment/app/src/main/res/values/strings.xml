@@ -34,11 +34,14 @@
     <string name="human_detection">Human Detection</string>
     <string name="_60cm">/60cm</string>
     <string name="_0">0</string>
-    <string name="_7m">/7m</string>
-    <string name="accumulated_number">Accumulated number:</string>
-    \
-    <string name="totalMax">/60cm</string>
-    <string name="tc_cmDetection">0</string>
-    <string name="slot_status">TODO</string>
-    <string name="SplashScreen">TODO</string>
+    <string name="_7m">/5m</string>
+    <string name="accumulated_number">Accumulated people pass by:</string>
+    <string name="temp_humd">Temperature &amp; Humidity</string>
+    <string name="check_humidity">Check Humidity</string>
+    <string name="Status">Status:</string>
+    <string name="Temperature">Temperature:</string>
+    <string name="Humidity">Humidity:</string>
+    <string name="weather">Weather:</string>
+    <string name="Check">Check</string>
+    <string name="soil_humidity1">Soil Humidity:</string>
 </resources>

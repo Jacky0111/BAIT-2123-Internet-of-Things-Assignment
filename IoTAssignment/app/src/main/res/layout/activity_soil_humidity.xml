@@ -24,12 +24,68 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="Soil Humidity"
+        android:text="@string/soil_humidity"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/check_humidity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:text="@string/check_humidity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/soil_humidity2"
+        android:layout_width="205dp"
+        android:layout_height="36dp"
+        android:text="@string/soil_humidity1"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/soil_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockIn" />
+
+    <TextView
+        android:id="@+id/status3"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:text="@string/Status"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/status_output"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/soil_output" />
+
+    <TextView
+        android:id="@+id/soil_output"
+        android:layout_width="207dp"
+        android:layout_height="45dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/status3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/soil_humidity2"
+        />
+
+    <TextView
+        android:id="@+id/status_output"
+        android:layout_width="322dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="48dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/check_humidity_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="564dp"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="30dp"
         android:textColor="#253A4B"
         android:textSize="25sp"
         android:text="@string/accumulated_number" />
@@ -78,25 +78,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="555dp"
-        android:layout_marginStart="311dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginStart="364dp"
         android:textStyle="bold"
         android:text="@string/_0"
         android:textColor="#253A4B"
         android:textSize="35sp" />
-
-    <!--    <com.mikhaellopez.circularprogressbar.CircularProgressBar-->
-<!--        android:id="@+id/circularProgressBar"-->
-<!--        android:layout_width="200dp"-->
-<!--        android:layout_height="200dp"-->
-<!--        app:cpb_background_progressbar_color="#f2f2f2"-->
-<!--        app:cpb_background_progressbar_width="20dp"-->
-<!--        app:cpb_progress_direction="to_right"-->
-<!--        app:cpb_progressbar_color="#0ceb1e"-->
-<!--        app:cpb_progressbar_width="15dp"-->
-<!--        app:cpb_round_border="true"-->
-<!--        app:cpb_progress_max="60"-->
-<!--        android:layout_centerInParent="true"/>-->
-
 
 </RelativeLayout>
