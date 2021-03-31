@@ -48,13 +48,13 @@ class ParkingSensor : AppCompatActivity() {
         val formattedDate = currentDateTime.format(formatterDate)
 
         var hour = currentDateTime.hour + 8
-        val f: NumberFormat = DecimalFormat("00")
-        val hourTEMP = f.format(currentDateTime.hour)
+//        val f: NumberFormat = DecimalFormat("00")
+//        val hourTEMP = f.format(currentDateTime.hour)
 
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
                 .reference.child("PI_12_$formattedDate")
 
-        var lastQuery = fetchDatabaseRef.child("$hourTEMP").orderByKey().limitToLast(1)
+        var lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
