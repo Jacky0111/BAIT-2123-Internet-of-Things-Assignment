@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="88dp"
-        android:text="Parking Sensor"
+        android:text="@string/parking_sensor"
         android:textColor="#253A4B"
         android:textSize="33sp"
         android:textStyle="bold"/>
@@ -46,9 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="40dp" />
+        android:text="@string/tc_cmDetection"
+        android:textColor="@color/teal_200"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/tv_totalMax"
@@ -56,20 +56,29 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_cmDetected"
         android:layout_centerInParent="true"
-        android:text="/60cm"
-        android:textColor="@android:color/black"
-        android:textSize="14dp" />
+        android:text="@string/totalMax"
+        android:textColor="@color/teal_200"
+        android:textSize="14sp" />
 
-        <TextView
+    <ImageView
+        android:id="@+id/slot_status"
+        android:layout_width="250sp"
+        android:layout_height="150sp"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/tv_totalMax"
+        android:layout_centerInParent="true"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/slot_status" />
+
+    <TextView
         android:id="@+id/display_msg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_below="@+id/tv_totalMax"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/slot_status"
         android:layout_centerInParent="true"
         android:text=""
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textColor="@android:color/black"
         android:textStyle="bold" />
-
 </RelativeLayout>
