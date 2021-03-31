@@ -47,7 +47,7 @@ class HumanDetection : AppCompatActivity() {
         val hour = currentDateTime.hour + 8
         //val f: NumberFormat = DecimalFormat("02")
         //val hourTEMP = f.format(currentDateTime.hour)
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
 
         val lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
 
