@@ -1,20 +1,20 @@
 package com.example.myapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
-import java.text.DecimalFormat
-import java.text.NumberFormat
 import java.time.LocalDateTime
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
+
 
 class HumanDetection : AppCompatActivity() {
     private lateinit var cmDetectedtext: TextView
@@ -39,12 +39,13 @@ class HumanDetection : AppCompatActivity() {
         numTextView = findViewById(R.id.number)
         pb = findViewById(R.id.circularProgressBar)
 
-        val currentDateTime = LocalDateTime.now()
+        //val currentDateTime = LocalDateTime.now()
+        val zoneId: ZoneId = ZoneId.of("Asia/Kuala_Lumpur")
 
         val formatterDate = DateTimeFormatter.ofPattern("yyyyMMdd")
-        val formattedDate = currentDateTime.format(formatterDate)
+        val formattedDate = LocalDateTime.now(zoneId).format(formatterDate)
 
-        val hour = currentDateTime.hour + 8
+        val hour = LocalDateTime.now(zoneId).hour //+ 8
         var strHour = hour.toString()
 
         if(hour in 0..9) {
