@@ -23,7 +23,7 @@ class LightProximity : AppCompatActivity(), SensorEventListener {
     private lateinit var pb: CircularProgressBar
     private lateinit var dis_val: String
 
-    private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+    private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
     private val data1 = database1.getReference("PI_12_CONTROL")
 
     @SuppressLint("SetTextI18n")
