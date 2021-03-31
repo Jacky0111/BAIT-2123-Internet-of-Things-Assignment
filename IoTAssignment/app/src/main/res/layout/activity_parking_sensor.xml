@@ -38,7 +38,7 @@
         app:cpb_progressbar_color="#0ceb1e"
         app:cpb_progressbar_width="20dp"
         app:cpb_round_border="true"
-        app:cpb_progress_max="60"
+        app:cpb_progress_max="70"
         android:layout_centerInParent="true"/>
 
     <TextView
@@ -46,8 +46,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="0"
+        android:text="@string/cmDetected"
         android:textColor="@color/teal_200"
+        android:textStyle="bold"
         android:textSize="40sp" />
 
     <TextView
@@ -56,8 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_cmDetected"
         android:layout_centerInParent="true"
-        android:text="/70cm"
+        android:text="@string/totalMax"
         android:textColor="@color/teal_200"
+        android:textStyle="bold"
         android:textSize="14sp" />
 
     <ImageView
@@ -68,10 +70,10 @@
         android:layout_below="@+id/tv_totalMax"
         android:layout_centerInParent="true"
         tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="Slot Status" />
+        android:contentDescription="@string/slot_status" />
 
     <TextView
-        android:id="@+id/display_msg1"
+        android:id="@+id/display_msg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
