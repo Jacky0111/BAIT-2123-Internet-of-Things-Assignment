@@ -39,7 +39,7 @@
         app:cpb_background_progressbar_color="#b6bbd8"
         app:cpb_background_progressbar_width="30dp"
         app:cpb_progress_direction="to_right"
-        app:cpb_progress_max="10"
+        app:cpb_progress_max="50"
         app:cpb_progressbar_color="#1a1aff"
         app:cpb_progressbar_width="30dp"
         app:cpb_round_border="true" />

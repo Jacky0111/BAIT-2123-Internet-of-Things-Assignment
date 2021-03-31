@@ -22,7 +22,7 @@ class HumanDetection : AppCompatActivity() {
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
 
-    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
+    private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,11 +45,14 @@ class HumanDetection : AppCompatActivity() {
         val formattedDate = currentDateTime.format(formatterDate)
 
         val hour = currentDateTime.hour + 8
-        //val f: NumberFormat = DecimalFormat("02")
-        //val hourTEMP = f.format(currentDateTime.hour)
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
+        var strHour = hour.toString()
 
-        val lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
+        if(hour in 0..9) {
+            strHour = "0".plus(hour.toString())
+        }
+
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
+        val lastQuery = fetchDatabaseRef.child(strHour).orderByKey().limitToLast(1)
 
         var count = 0
 

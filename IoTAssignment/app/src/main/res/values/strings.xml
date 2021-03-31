@@ -28,8 +28,7 @@
     <string name="soil_humidity">Soil Humidity</string>
     <string name="temperature_humidity"><![CDATA[Temperature & Humidity]]></string>
     <string name="distance_m">distance m</string>
-    <string name="brightness_4000_lumens">Brightness 4000 lumens</string>
-    <string name="distance_50m"><![CDATA[Distance: > 50m]]></string>
+    <string name="brightness_4000_lumens">Brightness (lumens):</string>
     <string name="human_detector">Human Detector</string>
     <string name="human_detection">Human Detection</string>
     <string name="_60cm">/60cm</string>
@@ -44,4 +43,7 @@
     <string name="weather">Weather:</string>
     <string name="Check">Check</string>
     <string name="soil_humidity1">Soil Humidity:</string>
+    <string name="_4000">4000</string>
+    <string name="distance_in_meter">Distance (m)</string>
+    <string name="_50"><![CDATA[>50]]></string>
 </resources>

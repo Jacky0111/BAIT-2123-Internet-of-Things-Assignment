@@ -32,7 +32,8 @@
         android:id="@+id/circularProgressBar"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
         app:cpb_background_progressbar_color="#b6bbd8"
         app:cpb_background_progressbar_width="30dp"
         app:cpb_progress_direction="to_right"
@@ -45,21 +46,52 @@
         android:id="@+id/dis_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_text"
-        android:layout_marginHorizontal="95dp"
-        android:layout_centerInParent="true"
-        android:text="@string/distance_50m"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="280dp"
+        android:text="@string/_50"
+        android:textColor="#253A4B"
+        android:textSize="70sp"
+    />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/dis_text"
+        android:text="@string/distance_in_meter"
+        android:textStyle="italic"
+        android:textColor="#253A4B"
+        android:textSize="22sp"
+    />
+
+    <ImageView
+        android:id="@+id/lightColor"
+        android:layout_width="137dp"
+        android:layout_height="141dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        app:srcCompat="@drawable/lightbulb" />
 
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="1000dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="655dp"
         android:text="@string/brightness_4000_lumens"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textColor="#253A4B"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/brightness_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="649dp"
+        android:text="@string/_4000"
+        android:textColor="#253A4B"
+        android:textStyle="bold"
+        android:textSize="30sp" />
 
 </RelativeLayout>
