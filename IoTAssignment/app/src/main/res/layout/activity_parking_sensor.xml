@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/tc_cmDetection"
+        android:text="0"
         android:textColor="@color/teal_200"
         android:textSize="40sp" />
 
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_cmDetected"
         android:layout_centerInParent="true"
-        android:text="@string/totalMax"
+        android:text="/70cm"
         android:textColor="@color/teal_200"
         android:textSize="14sp" />
 
@@ -68,7 +68,7 @@
         android:layout_below="@+id/tv_totalMax"
         android:layout_centerInParent="true"
         tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/slot_status" />
+        android:contentDescription="Slot Status" />
 
     <TextView
         android:id="@+id/display_msg1"

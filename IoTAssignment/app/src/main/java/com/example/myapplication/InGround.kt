@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -50,8 +52,10 @@ class InGround : AppCompatActivity(), SensorEventListener{
         val formattedDate = currentDateTime.format(formatterDate)
 
         var hour = currentDateTime.hour + 8
+//        val f: NumberFormat = DecimalFormat("00")
+//        val hourTEMP = f.format(currentDateTime.hour)
 
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
             .reference.child("PI_12_$formattedDate")
 
         Log.i("sound", "$formattedDate")
