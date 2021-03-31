@@ -30,8 +30,8 @@
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/circularProgressBar"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:layout_below="@+id/stockIn"
         android:layout_marginTop="50dp"
         app:cpb_background_progressbar_color="#b6bbd8"
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/stockIn"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="155dp"
         android:text="@string/communithings"
         android:textSize="25sp"
         android:textColor="@color/teal_200"
@@ -57,8 +57,8 @@
 
     <ImageView
         android:id="@+id/barrier_gate"
-        android:layout_width="250sp"
-        android:layout_height="150sp"
+        android:layout_width="230sp"
+        android:layout_height="130sp"
         android:layout_below="@+id/circularProgressBar"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
