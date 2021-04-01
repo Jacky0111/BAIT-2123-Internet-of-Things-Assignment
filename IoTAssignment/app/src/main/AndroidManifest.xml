@@ -13,11 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".IntruderDetection"></activity>
+        <activity android:name=".IntruderDetection" />
         <activity android:name=".smartDoorSecurity" />
         <activity android:name=".SmartLighting" />
         <activity android:name=".HumanDetection" />
-        <activity android:name=".TemperatureHumidity" />
         <activity android:name=".SoilHumidity" />
         <activity android:name=".SmartDoor" />
         <activity android:name=".LightProximity" />
