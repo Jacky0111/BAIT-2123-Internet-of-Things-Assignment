@@ -20,6 +20,7 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import java.text.DecimalFormat
 import java.text.NumberFormat
 import java.time.LocalDateTime
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 class InGround : AppCompatActivity(), SensorEventListener{
@@ -53,21 +54,24 @@ class InGround : AppCompatActivity(), SensorEventListener{
 
         setUpSensorStuff()
 
-        val currentDateTime = LocalDateTime.now()
+        val zoneId: ZoneId = ZoneId.of("Asia/Kuala_Lumpur")
 
         val formatterDate = DateTimeFormatter.ofPattern("yyyyMMdd")
-        val formattedDate = currentDateTime.format(formatterDate)
+        val formattedDate = LocalDateTime.now(zoneId).format(formatterDate)
 
-        var hour = currentDateTime.hour + 8
-//        val f: NumberFormat = DecimalFormat("00")
-//        val hourTEMP = f.format(currentDateTime.hour)
+        //val formattedDate = currentDateTime.format(formatterDate)
+
+        val hour = LocalDateTime.now(zoneId).hour //+ 8
+        var strHour = hour.toString()
+
+        if(hour in 0..9) {
+            strHour = "0".plus(hour.toString())
+        }
 
         val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
-            .reference.child("PI_12_$formattedDate")
+                .reference.child("PI_12_$formattedDate")
 
-        Log.i("sound", "$formattedDate")
-
-        var lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
+        var lastQuery = fetchDatabaseRef.child(strHour).orderByKey().limitToLast(1)
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -100,7 +104,7 @@ class InGround : AppCompatActivity(), SensorEventListener{
 
     private fun proximity(proxy: Float): String {
         return when (proxy.toInt()) {
-            0 -> {
+            in 0..2 -> {
                 displaySlotMsg1()
                 "No Car Detected"
             }
