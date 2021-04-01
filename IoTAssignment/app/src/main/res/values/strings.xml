@@ -54,4 +54,9 @@
     <string name="totalMax">/70cm</string>
     <string name="slot_status">Slot Status</string>
     <string name="lightColor">TODO</string>
+    <string name="smart_door">Smart Door</string>
+    <string name="live_message">Live Message</string>
+    <string name="message_you_want_to_type_max_16_char">Message you want to type (Max 16 char)</string>
+    <string name="send">SEND</string>
+    <string name="security_mode">SECURITY MODE</string>
 </resources>
