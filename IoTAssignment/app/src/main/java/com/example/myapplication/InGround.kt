@@ -68,7 +68,7 @@ class InGround : AppCompatActivity(), SensorEventListener{
             strHour = "0".plus(hour.toString())
         }
 
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
                 .reference.child("PI_12_$formattedDate")
 
         var lastQuery = fetchDatabaseRef.child(strHour).orderByKey().limitToLast(1)
