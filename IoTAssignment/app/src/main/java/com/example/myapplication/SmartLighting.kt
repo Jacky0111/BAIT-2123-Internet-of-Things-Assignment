@@ -29,7 +29,7 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
     private var runAgain = 0;
     val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
-
+    //1222223
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smart_lighting)
