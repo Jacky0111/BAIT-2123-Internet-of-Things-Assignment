@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import java.time.LocalDateTime
+import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
 class ParkingSensor : AppCompatActivity() {
@@ -40,19 +41,25 @@ class ParkingSensor : AppCompatActivity() {
         status2 = findViewById(R.id.slot_status)
         pb = findViewById(R.id.circularProgressBar)
 
-        val currentDateTime = LocalDateTime.now()
+        //val currentDateTime = LocalDateTime.now()
+        val zoneId: ZoneId = ZoneId.of("Asia/Kuala_Lumpur")
 
         val formatterDate = DateTimeFormatter.ofPattern("yyyyMMdd")
-        val formattedDate = currentDateTime.format(formatterDate)
+        val formattedDate = LocalDateTime.now(zoneId).format(formatterDate)
 
-        var hour = currentDateTime.hour + 8
-//        val f: NumberFormat = DecimalFormat("00")
-//        val hourTEMP = f.format(currentDateTime.hour)
+        //val formattedDate = currentDateTime.format(formatterDate)
+
+        val hour = LocalDateTime.now(zoneId).hour //+ 8
+        var strHour = hour.toString()
+
+        if(hour in 0..9) {
+            strHour = "0".plus(hour.toString())
+        }
 
         val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
                 .reference.child("PI_12_$formattedDate")
 
-        var lastQuery = fetchDatabaseRef.child("$hour").orderByKey().limitToLast(1)
+        var lastQuery = fetchDatabaseRef.child(strHour).orderByKey().limitToLast(1)
         val postListener = object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
 
@@ -65,7 +72,7 @@ class ParkingSensor : AppCompatActivity() {
                     pb.setProgressWithAnimation(ultrasonic!!.toFloat())
 
                     if(ultrasonic!!.toFloat() <= 30.0) {
-                        status2.setImageDrawable(getResources().getDrawable(R.drawable.group_180))
+                        status2.setImageResource(R.drawable.group_179)
                         msg2.text = "Slot is occupied"
                         data1.child("relay1").setValue("0")
                         data1.child("relay2").setValue("1")
@@ -73,7 +80,7 @@ class ParkingSensor : AppCompatActivity() {
                         data1.child("camera").setValue("1")
                     }
                     else{
-                        status2.setImageDrawable(getResources().getDrawable(R.drawable.group_179))
+                        status2.setImageResource(R.drawable.group_180)
                         msg2.text = "Slot is free now"
                         data1.child("relay1").setValue("1")
                         data1.child("relay2").setValue("1")
