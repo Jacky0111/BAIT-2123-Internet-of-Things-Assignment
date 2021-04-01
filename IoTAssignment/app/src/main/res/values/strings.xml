@@ -59,4 +59,9 @@
     <string name="message_you_want_to_type_max_16_char">Message you want to type (Max 16 char)</string>
     <string name="send">SEND</string>
     <string name="security_mode">SECURITY MODE</string>
+    <string name="intruder_detection">Intruder Detection</string>
+    <string name="meterDetection">0</string>
+    <string name="farm_is_safe">Farm is safe</string>
+    <string name="distance_meter">Distance (m)</string>
+    <string name="intruder_status">Intruder Status</string>
 </resources>

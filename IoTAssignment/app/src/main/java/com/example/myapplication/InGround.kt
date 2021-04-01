@@ -17,8 +17,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
-import java.text.DecimalFormat
-import java.text.NumberFormat
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -104,7 +102,7 @@ class InGround : AppCompatActivity(), SensorEventListener{
 
     private fun proximity(proxy: Float): String {
         return when (proxy.toInt()) {
-            in 0..2 -> {
+            in 0..1 -> {
                 displaySlotMsg1()
                 "No Car Detected"
             }
@@ -145,5 +143,4 @@ class InGround : AppCompatActivity(), SensorEventListener{
         super.onPause()
         sensorManager.unregisterListener(this)
     }
-
 }
