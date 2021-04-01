@@ -14,7 +14,7 @@ class SmartDoor : AppCompatActivity() {
     private lateinit var numTextView: TextView
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
-    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
+    private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
 
     override fun onCreate(savedInstanceState: Bundle?) {
