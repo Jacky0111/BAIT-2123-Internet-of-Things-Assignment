@@ -20,7 +20,7 @@
     <string name="title_activity_tt">tt</string>
     <string name="parking_sensor">Parking Sensor</string>
     <string name="proximity_sensor">Proximity Sensor</string>
-    <string name="smart_lighting">Smart Lighting</string>
+    <string name="smart_lighting">Smart Street Lighting</string>
     <string name="cctv">CCTV</string>
     <string name="CCTV">TODO</string>
     <string name="SmartDoor">TODO</string>
