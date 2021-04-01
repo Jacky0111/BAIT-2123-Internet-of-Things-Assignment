@@ -54,4 +54,5 @@
     <string name="totalMax">/70cm</string>
     <string name="slot_status">Slot Status</string>
     <string name="lightColor">TODO</string>
+    <string name="temperature_output">29°C</string>
 </resources>
