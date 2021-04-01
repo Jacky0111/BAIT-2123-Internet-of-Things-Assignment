@@ -27,9 +27,9 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
     private lateinit var text: TextView
     private lateinit var pb: CircularProgressBar
     private var runAgain = 0;
-    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/")
+    val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
-
+    //1222223
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_smart_lighting)
@@ -40,6 +40,8 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
             val intent = Intent(this, SmartBuilding::class.java)
             startActivity(intent)
         }
+
+        //text=findViewById(R.id.tv_text)
 
         val offButton = findViewById<Button>(R.id.offButton)
         offButton.setOnClickListener{
@@ -55,6 +57,7 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
             data1.child("oledsc").setValue("1")
             data1.child("buzzer").setValue("1")
 
+            text.text = "Light Is OFF"
             //Build Dialog
             val builder = AlertDialog.Builder(this)
             //Set title for alert dialog
@@ -82,7 +85,7 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
 
         val onButton = findViewById<Button>(R.id.onButton)
         onButton.setOnClickListener{
-            runAgain = 0;
+            //runAgain = 1;
             data1.child("lcdtxt").setValue("LIGHT IS ON !!! ") // Must 16 Characters
             data1.child("camera").setValue("1")
             data1.child("lcdbkR").setValue("10")
@@ -101,6 +104,85 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
             builder.setTitle("Dialog")
             //Set message for alert dialog
             builder.setMessage("The Light Is ON!!!")
+
+            //performing positive action
+            builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
+                //Toast.makeText(this, "New item added successfully!", Toast.LENGTH_SHORT).show()
+            })
+
+            //performing negative action
+            builder.setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        //Toast.makeText(this, "Cancelled Add New Item!", Toast.LENGTH_SHORT).show()
+                    })
+
+            //Create the AlertDialog
+            val alertDialog: AlertDialog = builder.create()
+            //set other dialog properties
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+        }
+
+        val offButton2 = findViewById<Button>(R.id.offButton2)
+        offButton2.setOnClickListener{
+            runAgain = 1;
+            data1.child("lcdtxt").setValue("Auto Mode IS OFFED!!") // Must 16 Characters
+            data1.child("camera").setValue("1")
+            data1.child("lcdbkR").setValue("10")
+            data1.child("lcdbkG").setValue("10")
+            data1.child("lcdbkB").setValue("10")
+            data1.child("relay1").setValue("1")
+            data1.child("relay2").setValue("1")
+            data1.child("ledlgt").setValue("2")
+            data1.child("oledsc").setValue("1")
+            data1.child("buzzer").setValue("1")
+            text.text = "Auto Mode Is OFF"
+            //Build Dialog
+            val builder = AlertDialog.Builder(this)
+            //Set title for alert dialog
+            builder.setTitle("Dialog")
+            //Set message for alert dialog
+            builder.setMessage("The Auto Mode Is OFF!!!")
+
+            //performing positive action
+            builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
+                //Toast.makeText(this, "New item added successfully!", Toast.LENGTH_SHORT).show()
+            })
+
+            //performing negative action
+            builder.setNegativeButton("Cancel",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        //Toast.makeText(this, "Cancelled Add New Item!", Toast.LENGTH_SHORT).show()
+                    })
+
+            //Create the AlertDialog
+            val alertDialog: AlertDialog = builder.create()
+            //set other dialog properties
+            alertDialog.setCancelable(false)
+            alertDialog.show()
+        }
+
+        val onButton2 = findViewById<Button>(R.id.onButton2)
+        onButton2.setOnClickListener{
+            runAgain = 0;
+            data1.child("lcdtxt").setValue("Auto Mode IS ON !!! ") // Must 16 Characters
+            data1.child("camera").setValue("1")
+            data1.child("lcdbkR").setValue("10")
+            data1.child("lcdbkG").setValue("10")
+            data1.child("lcdbkB").setValue("10")
+            data1.child("relay1").setValue("1")
+            data1.child("relay2").setValue("1")
+            data1.child("ledlgt").setValue("2")
+            data1.child("oledsc").setValue("1")
+            data1.child("buzzer").setValue("1")
+
+
+            //Build Dialog
+            val builder = AlertDialog.Builder(this)
+            //Set title for alert dialog
+            builder.setTitle("Dialog")
+            //Set message for alert dialog
+            builder.setMessage("The Auto Mode Is ON!!!")
 
             //performing positive action
             builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
@@ -145,61 +227,79 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
     }
 
     private fun brightness(brightness: Float): String {
+        var bright : String? = null
+        bright = when (brightness.toInt()){
+            0 -> {
+                        data1.child("lcdtxt").setValue("Pitch black     ")
+                        data1.child("relay1").setValue("1")
+                        data1.child("relay2").setValue("1")
+                        data1.child("camera").setValue("1")
+                        data1.child("lcdbkR").setValue("10")
+                        data1.child("lcdbkG").setValue("10")
+                        data1.child("lcdbkB").setValue("10")
+                        data1.child("ledlgt").setValue("2")
+                        data1.child("buzzer").setValue("1")
+                        "Pitch black"
+            }
 
-        return when (brightness.toInt()) {
+            in 1..10 -> {
+                        data1.child("lcdtxt").setValue("Dark Environment")
+                        data1.child("relay1").setValue("1")
+                        data1.child("relay2").setValue("1")
+                        data1.child("camera").setValue("1")
+                        data1.child("lcdbkR").setValue("10")
+                        data1.child("lcdbkG").setValue("10")
+                        data1.child("lcdbkB").setValue("10")
+                        data1.child("ledlgt").setValue("2")
+                        data1.child("buzzer").setValue("1")
+                        "Dark"
+            }
 
-            0 -> {"Pitch black"+data1.child("lcdtxt").setValue("Pitch black     ")+
-                                data1.child("relay1").setValue("1")+
-                                data1.child("relay2").setValue("1")+
-                                data1.child("camera").setValue("1")+
-                                data1.child("lcdbkR").setValue("10")+
-                                data1.child("lcdbkG").setValue("10")+
-                                data1.child("lcdbkB").setValue("10")+
-                                data1.child("ledlgt").setValue("2")+
-                                data1.child("buzzer").setValue("1")}
-            in 1..10 -> {"Dark"  +  data1.child("lcdtxt").setValue("Dark Environment")+
-                                    data1.child("relay1").setValue("1")+
-                                    data1.child("relay2").setValue("1")+
-                                    data1.child("camera").setValue("1")+
-                                    data1.child("lcdbkR").setValue("10")+
-                                    data1.child("lcdbkG").setValue("10")+
-                                    data1.child("lcdbkB").setValue("10")+
-                                    data1.child("ledlgt").setValue("2")+
-                                    data1.child("buzzer").setValue("1")}
-            in 11..50 -> {"Slightly bright"   +     data1.child("lcdtxt").setValue("Slightly bright ")+
-                                                    data1.child("relay1").setValue("0")+
-                                                    data1.child("relay2").setValue("0")+
-                                                    data1.child("lcdbkR").setValue("10")+
-                                                    data1.child("lcdbkG").setValue("10")+
-                                                    data1.child("lcdbkB").setValue("10")+
-                                                    data1.child("camera").setValue("1")+
-                                                    data1.child("ledlgt").setValue("2")+
-                                                    data1.child("buzzer").setValue("1")}
-            in 51..5000 ->  {"Normal Bright" + data1.child("lcdtxt").setValue("Normal Bright   ")+
-                                        data1.child("relay1").setValue("0")+
-                                        data1.child("relay2").setValue("1")+
-                                        data1.child("lcdbkR").setValue("10")+
-                                        data1.child("lcdbkG").setValue("10")+
-                                        data1.child("lcdbkB").setValue("10")+
-                                        data1.child("camera").setValue("1")+
-                                        data1.child("ledlgt").setValue("2")+
-                                        data1.child("buzzer").setValue("1")}
-            in 5001..25000 -> {"Incredibly bright"   +  data1.child("lcdtxt").setValue("IncrediblyBright")+
-                                                        data1.child("relay1").setValue("0")+
-                                                        data1.child("relay2").setValue("1")+
-                                                        data1.child("lcdbkR").setValue("10")+
-                                                        data1.child("lcdbkG").setValue("10")+
-                                                        data1.child("lcdbkB").setValue("10")+
-                                                        data1.child("camera").setValue("1")+
-                                                        data1.child("ledlgt").setValue("2")+
-                                                        data1.child("buzzer").setValue("1")}
+            in 11..50 -> {
+                        data1.child("lcdtxt").setValue("Slightly bright ")
+                        data1.child("relay1").setValue("0")
+                        data1.child("relay2").setValue("0")
+                        data1.child("lcdbkR").setValue("10")
+                        data1.child("lcdbkG").setValue("10")
+                        data1.child("lcdbkB").setValue("10")
+                        data1.child("camera").setValue("1")
+                        data1.child("ledlgt").setValue("2")
+                        data1.child("buzzer").setValue("1")
+                        "Slightly bright"
+            }
 
+            in 51..5000 ->  {
+                        data1.child("lcdtxt").setValue("Normal Bright   ")
+                        data1.child("relay1").setValue("0")
+                        data1.child("relay2").setValue("1")
+                        data1.child("lcdbkR").setValue("10")
+                        data1.child("lcdbkG").setValue("10")
+                        data1.child("lcdbkB").setValue("10")
+                        data1.child("camera").setValue("1")
+                        data1.child("ledlgt").setValue("2")
+                        data1.child("buzzer").setValue("1")
+                        "Normal Bright"
+            }
 
-
-            else -> "Do not need light"
-
+            in 5001..25000 -> {
+                        data1.child("lcdtxt").setValue("IncrediblyBright")
+                        data1.child("relay1").setValue("0")
+                        data1.child("relay2").setValue("1")
+                        data1.child("lcdbkR").setValue("10")
+                        data1.child("lcdbkG").setValue("10")
+                        data1.child("lcdbkB").setValue("10")
+                        data1.child("camera").setValue("1")
+                        data1.child("ledlgt").setValue("2")
+                        data1.child("buzzer").setValue("1")
+                        "Incredibly bright"
+            }
+            else -> {
+                "Do not need light"
+            }
         }
-    }
+        return bright
+        }
+
 
 
 
@@ -218,4 +318,4 @@ class SmartLighting : AppCompatActivity(), SensorEventListener {
         sensorManager.unregisterListener(this)
     }
 
-    }
+}

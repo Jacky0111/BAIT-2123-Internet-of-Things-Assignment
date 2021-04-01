@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-
+        <activity android:name=".smartDoorSecurity"></activity>
         <activity android:name=".SmartLighting" />
         <activity android:name=".HumanDetection" />
         <activity android:name=".TemperatureHumidity" />
@@ -27,7 +27,7 @@
         <activity android:name=".SmartStreet" />
         <activity android:name=".SmartParking" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

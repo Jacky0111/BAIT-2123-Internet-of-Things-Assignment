@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/stockIn"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="150dp"
         android:text="@string/communithings"
         android:textSize="25sp"
         android:textColor="@color/teal_200"
@@ -69,12 +69,11 @@
         android:id="@+id/display_msg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/barrier_gate"
         android:layout_centerInParent="true"
         android:text=""
         android:textSize="30sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/teal_200"
         android:textStyle="bold" />
 
     <TextView
@@ -85,7 +84,7 @@
         android:layout_centerInParent="true"
         android:text=""
         android:textSize="30sp"
-        android:textColor="@android:color/black"
+        android:textColor="@color/teal_200"
         android:textStyle="bold" />
 
 </RelativeLayout>

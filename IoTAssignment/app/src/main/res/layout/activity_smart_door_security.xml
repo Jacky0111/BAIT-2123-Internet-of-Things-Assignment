@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".smartDoorSecurity">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/backbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left_arrow" />
+
+    <TextView
+        android:id="@+id/smartStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="88dp"
+        android:text="Smart Door Security"
+        android:textColor="#253A4B"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circularProgressBar"
+        android:layout_width="265dp"
+        android:layout_height="264dp"
+        android:layout_centerInParent="true"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="30dp"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progress_max="50"
+        app:cpb_progressbar_color="#1a1aff"
+        app:cpb_progressbar_width="30dp"
+        app:cpb_round_border="true" />
+
+    <TextView
+        android:id="@+id/cmDetected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/_0"
+        android:textColor="#253A4B"
+        android:textSize="75sp" />
+
+    <TextView
+        android:id="@+id/accumulate_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="564dp"
+        android:layout_marginStart="40dp"
+        android:textColor="#253A4B"
+        android:textSize="20sp"
+        android:text="Accumulated Suspicion Number" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="595dp"
+        android:layout_marginStart="174dp"
+        android:text="0"
+        android:textColor="#253A4B"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

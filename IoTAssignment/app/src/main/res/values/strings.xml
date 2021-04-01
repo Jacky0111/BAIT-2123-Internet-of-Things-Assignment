@@ -20,7 +20,7 @@
     <string name="title_activity_tt">tt</string>
     <string name="parking_sensor">Parking Sensor</string>
     <string name="proximity_sensor">Proximity Sensor</string>
-    <string name="smart_lighting">Smart Lighting</string>
+    <string name="smart_lighting">Smart Street Lighting</string>
     <string name="cctv">CCTV</string>
     <string name="CCTV">TODO</string>
     <string name="SmartDoor">TODO</string>
@@ -54,5 +54,9 @@
     <string name="totalMax">/70cm</string>
     <string name="slot_status">Slot Status</string>
     <string name="lightColor">TODO</string>
-    <string name="temperature_output">29°C</string>
+    <string name="smart_door">Smart Door</string>
+    <string name="live_message">Live Message</string>
+    <string name="message_you_want_to_type_max_16_char">Message you want to type (Max 16 char)</string>
+    <string name="send">SEND</string>
+    <string name="security_mode">SECURITY MODE</string>
 </resources>
