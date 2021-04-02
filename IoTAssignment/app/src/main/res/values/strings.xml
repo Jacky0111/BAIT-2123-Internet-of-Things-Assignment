@@ -60,7 +60,7 @@
     <string name="send">SEND</string>
     <string name="security_mode">SECURITY MODE</string>
     <string name="intruder_detection">Intruder Detection</string>
-    <string name="meterDetection">0</string>
+    <string name="meterDetection">-</string>
     <string name="farm_is_safe">Farm is safe</string>
     <string name="distance_meter">Distance (m)</string>
     <string name="intruder_status">Intruder Status</string>
