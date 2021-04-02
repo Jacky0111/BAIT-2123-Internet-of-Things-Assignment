@@ -37,23 +37,23 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cardview_light_background"
         android:contentDescription="@string/soil_humidity"
-        app:layout_constraintBottom_toTopOf="@+id/temperature_humidity"
+        app:layout_constraintBottom_toTopOf="@+id/intruder_detection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockIn"
         app:srcCompat="@drawable/group_170" />
 
     <ImageButton
-        android:id="@+id/temperature_humidity"
+        android:id="@+id/intruder_detection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cardview_light_background"
-        android:contentDescription="@string/temperature_humidity"
+        android:contentDescription="Intruder Detection"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soil_humidity"
-        app:srcCompat="@drawable/group_171" />
+        app:srcCompat="@drawable/group_195" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

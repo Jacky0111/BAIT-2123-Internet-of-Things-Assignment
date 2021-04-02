@@ -23,9 +23,9 @@ class SmartAgriculture : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val tempHuBtn = findViewById<ImageButton>(R.id.temperature_humidity)
+        val tempHuBtn = findViewById<ImageButton>(R.id.intruder_detection)
         tempHuBtn.setOnClickListener{
-            val intent = Intent(this, TemperatureHumidity::class.java)
+            val intent = Intent(this, IntruderDetection::class.java)
             startActivity(intent)
         }
     }

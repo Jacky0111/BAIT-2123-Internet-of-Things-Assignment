@@ -52,7 +52,7 @@ class HumanDetection : AppCompatActivity() {
             strHour = "0".plus(hour.toString())
         }
 
-        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-2-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
+        val fetchDatabaseRef = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/").reference.child("PI_12_$formattedDate")
         val lastQuery = fetchDatabaseRef.child(strHour).orderByKey().limitToLast(1)
 
         var count = 0
