@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
         val data1 = database1.getReference("PI_12_CONTROL")
 
-//        data1.child("lcdscr").setValue("1")
-//        data1.child("lcdbkR").setValue("10")
-//        data1.child("lcdbkG").setValue("10")
-//        data1.child("lcdbkB").setValue("10")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("10")
+        data1.child("lcdbkG").setValue("10")
+        data1.child("lcdbkB").setValue("10")
 
         val smartParkingBtn = findViewById<ImageView>(R.id.smartParkingButton)
         smartParkingBtn.setOnClickListener{
