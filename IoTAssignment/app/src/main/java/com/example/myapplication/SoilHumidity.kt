@@ -38,9 +38,9 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
             val intent = Intent(this, SmartAgriculture::class.java)
             startActivity(intent)
         }
-
-        //val waterButton = findViewById<Button>(R.id.water_plants_button)
-        //waterButton.setOnClickListener(){
+//
+//        val waterButton = findViewById<Button>(R.id.water_plants_button)
+//        waterButton.setOnClickListener(){
 //            data1.child("lcdtxt").setValue("Watering Plants!") // Must 16 Characters
 //            data1.child("camera").setValue("1")
 //            data1.child("lcdbkR").setValue("10")
@@ -50,10 +50,10 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 //            data1.child("relay2").setValue("1")
 //            data1.child("ledlgt").setValue("2")
 //            data1.child("oledsc").setValue("1")
- //       }
+//        }
 
-        //val stopButton = findViewById<Button>(R.id.stop_water_button)
-        //stopButton.setOnClickListener(){
+//        val stopButton = findViewById<Button>(R.id.stop_water_button)
+//        stopButton.setOnClickListener(){
 //            data1.child("lcdtxt").setValue("Watering is Stop") // Must 16 Characters
 //            data1.child("camera").setValue("1")
 //            data1.child("lcdbkR").setValue("10")
