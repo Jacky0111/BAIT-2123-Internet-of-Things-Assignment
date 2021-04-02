@@ -21,6 +21,7 @@ class HumanDetection : AppCompatActivity() {
     private lateinit var numTextView: TextView
     private lateinit var pb: CircularProgressBar
     private var ultrasonic : String? = null
+    private var ultrasonic2: Double? = null
 
     private val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
@@ -61,14 +62,15 @@ class HumanDetection : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 for (snap in snapshot.children ) {
-                    ultrasonic = snap.child("rand1").value.toString()
+                    ultrasonic2 = snap.child("rand1").value.toString().toDouble() / 10
+                    ultrasonic = ultrasonic2.toString()
                     Log.i("firebase", snap.value.toString())
                     Log.i("sound", "$ultrasonic")
 
                     cmDetectedtext.text = ultrasonic
                     pb.setProgressWithAnimation(ultrasonic!!.toFloat())
 
-                    if(ultrasonic!!.toFloat() <= 50.0) {
+                    if(ultrasonic!!.toDouble() <= 5.0) {
                         count++
                         data1.child("ledlgt").setValue("1")
                         data1.child("lcdtxt").setValue("Total num ppl:$count ")
