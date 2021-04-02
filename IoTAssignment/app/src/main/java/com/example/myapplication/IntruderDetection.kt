@@ -68,16 +68,16 @@ class IntruderDetection : AppCompatActivity(), SensorEventListener {
 
     private fun displaySlotMsg1() {
         status1.setImageResource(R.drawable.group_220)
-//        data1.child("buzzer").setValue("0")
-//        data1.child("lcdtxt").setValue("The farm is safe")
-//        data1.child("camera").setValue("1")
+        data1.child("buzzer").setValue("0")
+        data1.child("lcdtxt").setValue("The farm is safe")
+        data1.child("camera").setValue("1")
     }
 
     private fun displaySlotMsg2() {
         status1.setImageResource(R.drawable.group_219)
-//        data1.child("lcdtxt").setValue("Intruder Found!!")
-//        data1.child("camera").setValue("1")
-//        data1.child("buzzer").setValue("1")
+        data1.child("lcdtxt").setValue("Intruder Found!!")
+        data1.child("camera").setValue("1")
+        data1.child("buzzer").setValue("1")
 
     }
 
