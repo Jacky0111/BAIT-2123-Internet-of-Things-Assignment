@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.hardware.Sensor
@@ -18,11 +19,11 @@ import java.util.*
 
 class SoilHumidity : AppCompatActivity(),SensorEventListener {
     private lateinit var sensorManager: SensorManager
-    private lateinit var humidLevel: TextView
-    private var humidSensor: Sensor? = null
-    private lateinit var humidOutput: TextView
-    private lateinit var soilStatusImage: ImageView
+    private lateinit var msg1: TextView
+    private lateinit var msg2: TextView
 
+    private var humidSensor: Sensor? = null
+    private lateinit var status: ImageView
 
     val database1 = FirebaseDatabase.getInstance("https://bait2123-202101-12-default-rtdb.firebaseio.com/")
     val data1 = database1.getReference("PI_12_CONTROL")
@@ -38,8 +39,8 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
             startActivity(intent)
         }
 
-        val waterButton = findViewById<Button>(R.id.water_plants_button)
-        waterButton.setOnClickListener(){
+        //val waterButton = findViewById<Button>(R.id.water_plants_button)
+        //waterButton.setOnClickListener(){
 //            data1.child("lcdtxt").setValue("Watering Plants!") // Must 16 Characters
 //            data1.child("camera").setValue("1")
 //            data1.child("lcdbkR").setValue("10")
@@ -49,10 +50,10 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 //            data1.child("relay2").setValue("1")
 //            data1.child("ledlgt").setValue("2")
 //            data1.child("oledsc").setValue("1")
-        }
+ //       }
 
-        val stopButton = findViewById<Button>(R.id.stop_water_button)
-        stopButton.setOnClickListener(){
+        //val stopButton = findViewById<Button>(R.id.stop_water_button)
+        //stopButton.setOnClickListener(){
 //            data1.child("lcdtxt").setValue("Watering is Stop") // Must 16 Characters
 //            data1.child("camera").setValue("1")
 //            data1.child("lcdbkR").setValue("10")
@@ -62,47 +63,51 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 //            data1.child("relay2").setValue("1")
 //            data1.child("ledlgt").setValue("2")
 //            data1.child("oledsc").setValue("1")
-        }
+//        }
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         humidSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
-        humidOutput = findViewById(R.id.soilStatus)
-        soilStatusImage = findViewById(R.id.plantImage)
-        soilStatusImage.setImageResource(R.drawable.sprout)
+
+        msg1 = findViewById(R.id.humid_percent)
+        msg2 = findViewById(R.id.tv_msg2)
+        status = findViewById(R.id.soil_status)
+        status.setImageResource(R.drawable.sprout)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onSensorChanged(event: SensorEvent?) {
         if (event?.sensor?.type == Sensor.TYPE_RELATIVE_HUMIDITY) {
             val humid1 = event.values[0]
 
-            humidLevel.text = "$humid1"
-            humidOutput.text = "${relativeHumidity(humid1)}"
+            msg1.text = "%.2f".format(humid1)
+            msg2.text = relativeHumidity(humid1)
         }
     }
+
         private fun relativeHumidity(humidSensor :Float): String{
             return when (humidSensor.toInt()) {
                 in 0..50 -> {
                     displaySlotMsg1()
-                    humidOutput.setTextColor(Color.parseColor("#FF0000"))
+                    msg2.setTextColor(Color.parseColor("#FF0000"))
                     "Plant need water"
                 }
                 else -> {
                     displaySlotMsg2()
-                    humidOutput.setTextColor(Color.parseColor("#253A4B"))
+                    msg2.setTextColor(Color.parseColor("#253A4B"))
                     "Plant is healthy"
                 }
             }
         }
 
     private fun displaySlotMsg1() {
-        soilStatusImage.setImageResource(R.drawable.soil__1_)
+        status.setImageResource(R.drawable.soil__1_)
 //        data1.child("buzzer").setValue("0")
 //        data1.child("lcdtxt").setValue("Plant need water")
 //        data1.child("camera").setValue("1")
     }
 
     private fun displaySlotMsg2() {
-        soilStatusImage.setImageResource(R.drawable.sprout)
+        status.setImageResource(R.drawable.sprout)
 //        data1.child("lcdtxt").setValue("Plant is healthy")
 //        data1.child("camera").setValue("1")
 //        data1.child("buzzer").setValue("1")

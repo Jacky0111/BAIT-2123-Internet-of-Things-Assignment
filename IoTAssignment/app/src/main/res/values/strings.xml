@@ -64,4 +64,8 @@
     <string name="farm_is_safe">Farm is safe</string>
     <string name="distance_meter">Distance (m)</string>
     <string name="intruder_status">Intruder Status</string>
+    <string name="soil_humid">Soil Humidity (%):</string>
+    <string name="todo">TODO</string>
+    <string name="percent">-</string>
+    <string name="plant_is_healthy">Plant is healthy</string>
 </resources>
