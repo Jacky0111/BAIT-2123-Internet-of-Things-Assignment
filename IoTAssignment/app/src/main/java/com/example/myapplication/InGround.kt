@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.hardware.Sensor
@@ -46,8 +47,10 @@ class InGround : AppCompatActivity(), SensorEventListener{
 
         text = findViewById(R.id.tv_text)
         msg1 = findViewById(R.id.display_msg1)
+        msg1.text = "Barrier gate is closed"
         msg3 = findViewById(R.id.display_msg3)
         status1 = findViewById(R.id.barrier_gate)
+        status1.setImageResource(R.drawable.group_192)
         pb = findViewById(R.id.circularProgressBar)
 
         setUpSensorStuff()
@@ -95,34 +98,36 @@ class InGround : AppCompatActivity(), SensorEventListener{
         if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
             val proxy1 = event.values[0]
 
-            text.text = "Sensor: $proxy1\n${proximity(proxy1)}"
+            text.text = "Sensor(cm): $proxy1\n${proximity(proxy1)}"
             pb.setProgressWithAnimation(proxy1)
         }
     }
 
     private fun proximity(proxy: Float): String {
         return when (proxy.toInt()) {
-            in 0..1 -> {
-                displaySlotMsg1()
-                "No Car Detected"
-            }
-            else -> {
+            in 0..9 -> {
                 displaySlotMsg2()
                 "Car Detected"
+            }
+            else -> {
+                displaySlotMsg1()
+                "No Car Detected"
             }
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun displaySlotMsg1() {
-        status1.setImageDrawable(getResources().getDrawable(R.drawable.group_192))
+        status1.setImageResource(R.drawable.group_192)
         msg1.text = "Barrier gate is closed"
         msg3.text = " "
         data1.child("lcdtxt").setValue("No Car Detected+")
         data1.child("camera").setValue("1")
     }
 
+    @SuppressLint("SetTextI18n")
     private fun displaySlotMsg2() {
-        status1.setImageDrawable(getResources().getDrawable(R.drawable.group_190))
+        status1.setImageResource(R.drawable.group_190)
         msg1.text = "Barrier gate is opened"
         msg3.text = "$random slots available"
         data1.child("lcdtxt").setValue("Car Detected++++")
