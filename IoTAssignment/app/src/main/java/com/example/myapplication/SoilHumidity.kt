@@ -39,31 +39,6 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
             startActivity(intent)
         }
 
-        //val waterButton = findViewById<Button>(R.id.water_plants_button)
-        //waterButton.setOnClickListener(){
-//            data1.child("lcdtxt").setValue("Watering Plants!") // Must 16 Characters
-//            data1.child("camera").setValue("1")
-//            data1.child("lcdbkR").setValue("10")
-//            data1.child("lcdbkG").setValue("10")
-//            data1.child("lcdbkB").setValue("10")
-//            data1.child("relay1").setValue("1")
-//            data1.child("relay2").setValue("1")
-//            data1.child("ledlgt").setValue("2")
-//            data1.child("oledsc").setValue("1")
- //       }
-
-        //val stopButton = findViewById<Button>(R.id.stop_water_button)
-        //stopButton.setOnClickListener(){
-//            data1.child("lcdtxt").setValue("Watering is Stop") // Must 16 Characters
-//            data1.child("camera").setValue("1")
-//            data1.child("lcdbkR").setValue("10")
-//            data1.child("lcdbkG").setValue("10")
-//            data1.child("lcdbkB").setValue("10")
-//            data1.child("relay1").setValue("1")
-//            data1.child("relay2").setValue("1")
-//            data1.child("ledlgt").setValue("2")
-//            data1.child("oledsc").setValue("1")
-//        }
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         humidSensor =  sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
@@ -84,25 +59,31 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
         }
     }
 
-        private fun relativeHumidity(humidSensor :Float): String{
+        private fun relativeHumidity(humidSensor :Float): String {
             return when (humidSensor.toInt()) {
                 in 0..50 -> {
                     displaySlotMsg1()
-                    msg2.setTextColor(Color.parseColor("#FF0000"))
-                    "Plant need water"
+                    msg2.setTextColor(Color.parseColor("#0000FF"))
+                    "Watering Plants"
                 }
-                else -> {
+                in 51..80 -> {
                     displaySlotMsg2()
                     msg2.setTextColor(Color.parseColor("#253A4B"))
                     "Plant is healthy"
+
+                }
+                else -> {
+                    displaySlotMsg3()
+                    msg2.setTextColor(Color.parseColor("#FF0000"))
+                    "Plant is too wet"
                 }
             }
         }
 
     private fun displaySlotMsg1() {
-        status.setImageResource(R.drawable.soil__1_)
+        status.setImageResource(R.drawable.watering_plants)
 //        data1.child("buzzer").setValue("0")
-//        data1.child("lcdtxt").setValue("Plant need water")
+//        data1.child("lcdtxt").setValue("Watering Plants!")
 //        data1.child("camera").setValue("1")
     }
 
@@ -112,6 +93,13 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 //        data1.child("camera").setValue("1")
 //        data1.child("buzzer").setValue("1")
 
+    }
+
+    private fun displaySlotMsg3(){
+        status.setImageResource(R.drawable.hydroponic)
+        //data1.child("lcdtxt").setValue("Draining water!!")
+//        data1.child("camera").setValue("1")
+//        data1.child("buzzer").setValue("1")
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
