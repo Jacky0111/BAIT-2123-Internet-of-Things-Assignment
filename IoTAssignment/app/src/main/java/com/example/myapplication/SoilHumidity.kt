@@ -61,12 +61,12 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 
         private fun relativeHumidity(humidSensor :Float): String {
             return when (humidSensor.toInt()) {
-                in 0..50 -> {
+                in 0..49 -> {
                     displaySlotMsg1()
                     msg2.setTextColor(Color.parseColor("#0000FF"))
                     "Watering Plants"
                 }
-                in 51..80 -> {
+                in 50..79 -> {
                     displaySlotMsg2()
                     msg2.setTextColor(Color.parseColor("#253A4B"))
                     "Plant is healthy"
@@ -91,7 +91,7 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
         status.setImageResource(R.drawable.sprout)
 //        data1.child("lcdtxt").setValue("Plant is healthy")
 //        data1.child("camera").setValue("1")
-//        data1.child("buzzer").setValue("1")
+//        data1.child("buzzer").setValue("0")
 
     }
 
