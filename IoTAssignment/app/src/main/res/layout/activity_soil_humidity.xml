@@ -37,13 +37,14 @@
         android:layout_height="171dp"
         android:layout_below="@+id/stockIn"
         android:layout_centerInParent="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginBottom="69dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_level"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stockIn"
-        tools:srcCompat="@drawable/watering_plants"
-        android:contentDescription="@string/todo" />
+        tools:srcCompat="@drawable/watering_plants" />
 
     <TextView
         android:id="@+id/humidity_level"
@@ -51,12 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/stockIn"
         android:layout_centerInParent="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="64dp"
         android:text="@string/soil_humid"
         android:textColor="#253A4B"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/humid_percent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soil_status" />
 
@@ -66,16 +67,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/stockIn"
         android:layout_centerInParent="true"
-        android:layout_marginTop="443dp"
         android:layout_marginEnd="24dp"
         android:text=""
         android:textColor="#253A4B"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_msg2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soil_status"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/humidity_level" />
 
     <TextView
         android:id="@+id/tv_msg2"
