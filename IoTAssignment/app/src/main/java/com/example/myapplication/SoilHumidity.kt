@@ -82,24 +82,44 @@ class SoilHumidity : AppCompatActivity(),SensorEventListener {
 
     private fun displaySlotMsg1() {
         status.setImageResource(R.drawable.watering_plants)
-//        data1.child("buzzer").setValue("0")
-//        data1.child("lcdtxt").setValue("Watering Plants!")
-//        data1.child("camera").setValue("1")
+        data1.child("buzzer").setValue("0")
+        data1.child("lcdtxt").setValue("Watering Plants!")
+        data1.child("camera").setValue("1")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("10")
+        data1.child("lcdbkG").setValue("10")
+        data1.child("lcdbkB").setValue("50")
+        data1.child("relay1").setValue("1")
+        data1.child("relay2").setValue("0")
     }
 
     private fun displaySlotMsg2() {
         status.setImageResource(R.drawable.sprout)
-//        data1.child("lcdtxt").setValue("Plant is healthy")
-//        data1.child("camera").setValue("1")
-//        data1.child("buzzer").setValue("0")
+        data1.child("lcdtxt").setValue("Plant is healthy")
+        data1.child("camera").setValue("1")
+        data1.child("buzzer").setValue("0")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("0")
+        data1.child("lcdbkG").setValue("10")
+        data1.child("lcdbkB").setValue("0")
+        data1.child("relay1").setValue("1")
+        data1.child("relay2").setValue("1")
 
     }
 
     private fun displaySlotMsg3(){
         status.setImageResource(R.drawable.hydroponic)
-        //data1.child("lcdtxt").setValue("Draining water!!")
-//        data1.child("camera").setValue("1")
-//        data1.child("buzzer").setValue("1")
+        data1.child("lcdtxt").setValue("Draining water!!")
+        data1.child("camera").setValue("1")
+        data1.child("buzzer").setValue("1")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("10")
+        data1.child("lcdbkG").setValue("0")
+        data1.child("lcdbkB").setValue("0")
+        data1.child("relay1").setValue("0")
+        data1.child("relay2").setValue("4")
+        data1.child("ledlgt").setValue("2")
+        data1.child("oledsc").setValue("1")
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

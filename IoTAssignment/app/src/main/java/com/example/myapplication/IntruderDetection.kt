@@ -71,6 +71,12 @@ class IntruderDetection : AppCompatActivity(), SensorEventListener {
         data1.child("buzzer").setValue("0")
         data1.child("lcdtxt").setValue("The farm is safe")
         data1.child("camera").setValue("1")
+        data1.child("relay1").setValue("1")
+        data1.child("relay2").setValue("1")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("0")
+        data1.child("lcdbkG").setValue("10")
+        data1.child("lcdbkB").setValue("0")
     }
 
     private fun displaySlotMsg2() {
@@ -78,6 +84,12 @@ class IntruderDetection : AppCompatActivity(), SensorEventListener {
         data1.child("lcdtxt").setValue("Intruder Found!!")
         data1.child("camera").setValue("1")
         data1.child("buzzer").setValue("1")
+        data1.child("relay1").setValue("0")
+        data1.child("relay2").setValue("4")
+        data1.child("lcdscr").setValue("1")
+        data1.child("lcdbkR").setValue("10")
+        data1.child("lcdbkG").setValue("0")
+        data1.child("lcdbkB").setValue("0")
 
     }
 
